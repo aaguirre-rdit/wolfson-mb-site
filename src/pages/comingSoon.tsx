@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import background from '../images/comingsoon-bg.jpg';
+import * as background from '../images/comingsoon-bg.jpg';
 const Screen = styled.div`
   height:100vh;
   width:100vw;
