@@ -19,11 +19,15 @@ const Screen = styled.div`
   background-size:cover;
 `;
 const Typo = styled.p`
+  text-align:center;
   color:rgba(255,255,255,0.9);
-  font-size:${props => props.type === 'title' ? '5em' : '3em'};
-  margin:2rem auto;
+  font-size:${props => props.type === 'title' ? '4em' : '2.5em'};
   text-shadow:2px 1px 10px rgba(0,0,0,0.5);
   font-family: ${props => props.type === 'title' ?'Italianno' : 'Give You Glory'}, cursive;
+  line-height:${props => props.type === 'title' ? '1.5em' : '1.3em'};
+  @media (max-width: 580px) {
+     font-size:${props => props.type === 'title' ? '3em' : '2em'};
+  }
 `
 
 const glowKeyframes = keyframes`

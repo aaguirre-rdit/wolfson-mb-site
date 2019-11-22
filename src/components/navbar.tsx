@@ -8,8 +8,11 @@ const Navigation = styled.div`
   border:1px solid white;
   border-radius:10px;
   display:flex;
-  width:${isMobile()? Math.floor(0.8* window.outerWidth) : '500px'};
-  flex-direction:${isMobile()? 'column': 'row'};
+  width:600px;
+  @media (max-width: 580px) {
+    flex-direction: column;
+    width:80vw;
+  }
   justify-content:center;
   align-items:center;
   
@@ -21,6 +24,9 @@ const Item = styled.div`
   a{
     color:white;
     text-decoration:none;
+    :hover{
+      text-shadow:1px 1px 3px rgba(255,255,255, 0.5);
+    }
   }
 `
 const ItemInterface = {

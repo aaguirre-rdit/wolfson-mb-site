@@ -19,6 +19,12 @@ interface Props {
   children?: any,
   location: any
 }
+const Footer = styled.footer`
+  bottom:0 !important;
+  position:absolute;
+  height:3rem;
+  font-size:14px;
+`
 const Screen = styled.div`
   height:100vh;
   margin:0;
@@ -68,8 +74,6 @@ const Layout = ({ children } : Props) => {
       }
     }
   `)
-  const pathname = window.location.pathname;
-  console.log(pathname)
   return (
     <Screen>
       {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
@@ -78,11 +82,11 @@ const Layout = ({ children } : Props) => {
         <Main>{children}</Main>
         <VertLine height={50}/>
         <Navbar/>
-        <footer>
+        <Footer>
           © {new Date().getFullYear()}, Wolfson College
           <br/>
           University of Cambridge
-        </footer>
+        </Footer>
 
     </Screen>
   )

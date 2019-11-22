@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import ComingSoon from './coming-soon';
 const Launch = false;
 const IndexPage = () => {
-  useEffect(() => {navigate('/comingSoon')}, [])
+  useEffect(() => {navigate('/coming-soon')}, [])
   return(
     <Layout>
       <SEO title="Home" />
