@@ -10,8 +10,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 import Header from "./header";
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from 'gatsby-background-image';
 import Navbar from './navbar';
+import { SocialIcon } from 'react-social-icons';
 
 import "./layout.css"
 import * as background from "../images/comingsoon-bg.jpg"
@@ -21,14 +22,19 @@ interface Props {
 }
 const Footer = styled.footer`
   bottom:0 !important;
-  position:absolute;
   height:3rem;
   font-size:14px;
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
 `
 const Screen = styled.div`
-  height:100vh;
+  min-height:100vh;
+  padding-top:2em;
   margin:0;
-  min-width:100vw;
+  overflow-y:scroll;
+  width:100vw;
   flex:1;
   display:flex;
   flex-direction:column;
@@ -41,7 +47,7 @@ const Screen = styled.div`
     ),
   url(${background});
   background-repeat: no-repeat;
-  background-attachment: cover;
+  background-attachment: fixed;
   background-position: center;
   background-size:cover;
   color:white;
@@ -52,16 +58,36 @@ const Main = styled.main`
   display:flex;
   flex-direction:column;
   align-items:center;
+  @media (max-width: 810px) {
+    width: 95%;
+  }
+  width: 800px;
 `
 const VertLine = styled.div`
   height:${props => props.height}px;
   border:solid 0.5px white;
 `
+const SocialIconContainer = styled.div`
+  flex:1;
+  margin:20px 0;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  flex:1;
+  svg:hover, a:hover{
+    box-shadow:1px 1px 24px rgba(255,255,255,.5);
+    height:30px;
+    width:30px;
+    background:transparent;
+  }
+`
+
 const Logo = styled.img`
   border-radius:100%;
   border:1px solid white;
-  height:80px;
-  width:80px;
+  min-height:80px;
+  min-width:80px;
   margin-bottom:0;
 `
 const Layout = ({ children } : Props) => {
@@ -83,6 +109,16 @@ const Layout = ({ children } : Props) => {
         <VertLine height={50}/>
         <Navbar/>
         <Footer>
+          <SocialIconContainer>
+            <SocialIcon
+              style={{ height: 25, width: 25 }}
+              url={'https://www.facebook.com/wolfsonmayball/'}
+              bgColor={'white'}/>
+            <SocialIcon
+              style={{ height: 25, width: 25 }}
+              url={'https://www.instagram.com/wolfsonmayball/'}
+              bgColor={'white'}/>
+          </SocialIconContainer>
           © {new Date().getFullYear()}, Wolfson College
           <br/>
           University of Cambridge

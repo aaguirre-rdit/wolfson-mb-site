@@ -15,11 +15,16 @@ const Navigation = styled.div`
   }
   justify-content:center;
   align-items:center;
+  padding:10px 0 !important;
+
   
 `
 const Item = styled.div`
+  text-transform: uppercase;
   flex:1;
   text-align:center;
+  font-size:14px !important;
+  font-family:Roboto, sans-serif;
   padding:auto 15px;
   a{
     color:white;
@@ -28,6 +33,7 @@ const Item = styled.div`
       text-shadow:1px 1px 3px rgba(255,255,255, 0.5);
     }
   }
+  
 `
 const ItemInterface = {
   title: string,
@@ -46,7 +52,7 @@ const Navbar = () => {
   return (
     <Navigation>
       <NavItem title={'Home'} url={'/coming-soon'}/>
-      <NavItem title={'Commitee'} url={'/page-2'}/>
+      <NavItem title={'Commitee'} url={'/commitee'}/>
 
     </Navigation>
   )
