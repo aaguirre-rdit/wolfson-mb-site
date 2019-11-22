@@ -8,12 +8,56 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components';
+import Header from "./header";
+import BackgroundImage from 'gatsby-background-image'
+import Navbar from './navbar';
 
-import Header from "./header"
 import "./layout.css"
+import * as background from "../images/comingsoon-bg.jpg"
 interface Props {
-  children?: any
+  children?: any,
+  location: any
 }
+const Screen = styled.div`
+  height:100vh;
+  margin:0;
+  min-width:100vw;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:
+  linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.25)
+    ),
+  url(${background});
+  background-repeat: no-repeat;
+  background-attachment: cover;
+  background-position: center;
+  background-size:cover;
+  color:white;
+`;
+const Main = styled.main`
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+`
+const VertLine = styled.div`
+  height:${props => props.height}px;
+  border:solid 0.5px white;
+`
+const Logo = styled.img`
+  border-radius:100%;
+  border:1px solid white;
+  height:80px;
+  width:80px;
+  margin-bottom:0;
+`
 const Layout = ({ children } : Props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,26 +68,23 @@ const Layout = ({ children } : Props) => {
       }
     }
   `)
-
+  const pathname = window.location.pathname;
+  console.log(pathname)
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
+    <Screen>
+      {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
+        <Logo/>
+        <VertLine height={40}/>
+        <Main>{children}</Main>
+        <VertLine height={50}/>
+        <Navbar/>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}, Wolfson College
+          <br/>
+          University of Cambridge
         </footer>
-      </div>
-    </>
+
+    </Screen>
   )
 }
 
