@@ -18,7 +18,7 @@ import "./layout.css"
 import * as background from "../images/comingsoon-bg.jpg"
 interface Props {
   children?: any,
-  location: any
+  showStars?: boolean
 }
 const Footer = styled.footer`
   bottom:0 !important;
@@ -33,13 +33,13 @@ const Screen = styled.div`
   min-height:100vh;
   padding-top:2em;
   margin:0;
-  overflow-y:scroll;
   width:100vw;
   flex:1;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  background-color:black;
   background:
   linear-gradient(
       rgba(0, 0, 0, 0.45), 
@@ -51,6 +51,7 @@ const Screen = styled.div`
   background-position: center;
   background-size:cover;
   color:white;
+  overflow-y:scroll !important;
 `;
 const Comps = styled.div`
   flex:1;
@@ -98,7 +99,22 @@ const Logo = styled.img`
   min-width:80px;
   margin-bottom:0;
 `
-const Layout = ({ children } : Props) => {
+const Star = styled.div`
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(250, 255, 222, 0.5), rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(250, 255, 222, 0.5));
+  animation:
+    tail 3000ms ease-in-out infinite,
+    shooting 3000ms ease-in-out infinite;
+`;
+const Night = styled.div`
+  display:absolute;
+  transform: rotateZ(45deg);
+  z-index:0;
+`
+const Layout = ({ children, showStars } : Props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -108,10 +124,24 @@ const Layout = ({ children } : Props) => {
       }
     }
   `)
+  let stars = [];
+  for (let i = 0; i < 5; i++){
+    // @ts-ignore
+    stars.push(<Star className={'shooting-star'} style={{
+      top:Math.floor(Math.random() * Math.floor(30))+'%',
+      left:Math.floor(Math.random() * Math.floor(60))+'%'
+    }}/>)
+  }
   return (
     <Screen>
+      {showStars ?
+        <Night className={'night'}>
+          {stars.map(star=>star)}
+        </Night> : undefined
+      }
       {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
       <Comps>
+
         <Logo/>
         <VertLine height={40}/>
         <Main>{children}</Main>

@@ -2,10 +2,10 @@ $shooting-time: 3000ms;
 
 .night {
   position: absolute;
-  top:0 !important;
-  left:0 !important;
-  width: 100vw;
-  height: 100vh;
+  top:25% !important;
+  left:25% !important;
+  width: 50vw;
+  height: 50vh;
   transform: rotateZ(45deg);
   z-index: 0;
   // animation: sky 200000ms linear infinite;
@@ -39,7 +39,7 @@ $shooting-time: 3000ms;
 
   &::after {
     @extend .shooting_star::before;
-    transform: translateX(50%) rotateZ(-45deg);
+    transform: translateX(30%) rotateZ(-45deg);
   }
 
   @for $i from 1 through 20 {

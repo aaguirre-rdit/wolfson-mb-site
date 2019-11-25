@@ -37,35 +37,12 @@ const glowKeyframes = keyframes`
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
    `
-const Star = styled.div`
-  position: absolute;
-  height: 2px;
-  background: linear-gradient(-45deg, rgba(250, 255, 222, 0.5), rgba(0, 0, 255, 0));
-  border-radius: 999px;
-  filter: drop-shadow(0 0 6px rgba(250, 255, 222, 0.5));
-  animation:
-    tail 3000ms ease-in-out infinite,
-    shooting 3000ms ease-in-out infinite;
-`;
-const Night = styled.div`
-  display:absolute;
-  transform: rotateZ(45deg);
-  z-index:0;
-`
+
 const  ComingSoon = () => {
-    let stars = [];
-    for (let i = 0; i < 5; i++){
-      // @ts-ignore
-      stars.push(<Star className={'shooting-star'} style={{
-        top:Math.floor(Math.random() * Math.floor(100))+'%',
-        left:Math.floor(Math.random() * Math.floor(100))+'%'
-      }}/>)
-    }
+
     return(
-    <Layout>
-      <Night className={'night'}>
-        {stars.map(star=>star)}
-      </Night>
+    <Layout showStars={true}>
+
       <SEO title="Coming Soon" />
 
       <Typo type={'title'}>Wolfson May Ball 2020</Typo>
