@@ -52,6 +52,14 @@ const Screen = styled.div`
   background-size:cover;
   color:white;
 `;
+const Comps = styled.div`
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
+`
 const Main = styled.main`
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -103,6 +111,7 @@ const Layout = ({ children } : Props) => {
   return (
     <Screen>
       {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
+      <Comps>
         <Logo/>
         <VertLine height={40}/>
         <Main>{children}</Main>
@@ -123,7 +132,7 @@ const Layout = ({ children } : Props) => {
           <br/>
           University of Cambridge
         </Footer>
-
+      </Comps>
     </Screen>
   )
 }

@@ -49,9 +49,8 @@ const Star = styled.div`
 `;
 const Night = styled.div`
   display:absolute;
-  width:300px;
-  height:300px;
   transform: rotateZ(45deg);
+  z-index:0;
 `
 const  ComingSoon = () => {
     let stars = [];
@@ -64,15 +63,16 @@ const  ComingSoon = () => {
     }
     return(
     <Layout>
-
+      <Night className={'night'}>
+        {stars.map(star=>star)}
+      </Night>
       <SEO title="Coming Soon" />
 
       <Typo type={'title'}>Wolfson May Ball 2020</Typo>
       <Typo type={'subtitle'}>Coming Soon</Typo>
-      <Night className={'night'}>
-      {stars.map(star=>star)}
-      </Night>
+
     </Layout>
+
     )
 
 }

@@ -16,7 +16,7 @@ const Navigation = styled.div`
   justify-content:center;
   align-items:center;
   padding:10px 0 !important;
-
+  z-index:1;
   
 `
 const Item = styled.div`
