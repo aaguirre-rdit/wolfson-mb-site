@@ -11,7 +11,7 @@ const Navigation = styled.div`
   width:600px;
   @media (max-width: 580px) {
     flex-direction: column;
-    width:80vw;
+    width:300px;
   }
   justify-content:center;
   align-items:center;

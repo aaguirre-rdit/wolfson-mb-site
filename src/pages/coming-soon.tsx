@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Layout from "../components/layout";
 import * as background from '../images/comingsoon-bg.jpg';
+import  '../styles/stars.scss';
+
 import SEO from "../components/seo";
 const Screen = styled.div`
   height:100vh;
@@ -35,13 +37,41 @@ const glowKeyframes = keyframes`
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
    `
-
+const Star = styled.div`
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(250, 255, 222, 0.5), rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(250, 255, 222, 0.5));
+  animation:
+    tail 3000ms ease-in-out infinite,
+    shooting 3000ms ease-in-out infinite;
+`;
+const Night = styled.div`
+  display:absolute;
+  width:300px;
+  height:300px;
+  transform: rotateZ(45deg);
+`
 const  ComingSoon = () => {
+    let stars = [];
+    for (let i = 0; i < 20; i++){
+      // @ts-ignore
+      stars.push(<Star className={'shooting-star'} style={{
+        top:Math.floor(Math.random() * Math.floor(100))+'%',
+        left:Math.floor(Math.random() * Math.floor(100))+'%'
+      }}/>)
+    }
     return(
     <Layout>
+
       <SEO title="Coming Soon" />
+
       <Typo type={'title'}>Wolfson May Ball 2020</Typo>
       <Typo type={'subtitle'}>Coming Soon</Typo>
+      <Night className={'night'}>
+      {stars.map(star=>star)}
+      </Night>
     </Layout>
     )
 
