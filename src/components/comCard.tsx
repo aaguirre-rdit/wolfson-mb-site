@@ -12,6 +12,9 @@ const Card = styled.div`
   justify-content:center;
   border:1px solid rgba(255,255,255, 0.3);
   border-radius:5px;
+  @media (max-width: 580px) {
+    width:80%;
+  }
 `
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
