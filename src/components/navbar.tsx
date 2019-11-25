@@ -52,7 +52,7 @@ const Navbar = () => {
   return (
     <Navigation>
       <NavItem title={'Home'} url={'/coming-soon'}/>
-      <NavItem title={'Commitee'} url={'/commitee'}/>
+      <NavItem title={'Committee'} url={'/committee'}/>
 
     </Navigation>
   )

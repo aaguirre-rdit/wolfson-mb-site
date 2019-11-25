@@ -25,7 +25,7 @@ const Typo = styled.p`
   color:rgba(255,255,255,0.9);
   font-size:${props => props.type === 'title' ? '4em' : '2.5em'};
   text-shadow:2px 1px 10px rgba(0,0,0,0.5);
-  font-family: ${props => props.type === 'title' ?'Italianno' : 'Give You Glory'}, cursive;
+  font-family: ${props => props.type === 'title' ?'Great Vibes' : 'Give You Glory'}, cursive;
   line-height:${props => props.type === 'title' ? '1.5em' : '1.3em'};
   @media (max-width: 580px) {
      font-size:${props => props.type === 'title' ? '3em' : '2em'};
@@ -54,7 +54,7 @@ const Night = styled.div`
 `
 const  ComingSoon = () => {
     let stars = [];
-    for (let i = 0; i < 20; i++){
+    for (let i = 0; i < 5; i++){
       // @ts-ignore
       stars.push(<Star className={'shooting-star'} style={{
         top:Math.floor(Math.random() * Math.floor(100))+'%',

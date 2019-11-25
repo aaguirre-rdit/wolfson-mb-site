@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { Dialog, Typography, Slide, DialogTitle, DialogContent } from "@material-ui/core"
+import { Dialog, Typography, Zoom, DialogTitle, DialogContent } from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close';
 const Card = styled.div`
   width: ${props => props.isPresident? '80%':'200px'};
@@ -19,13 +19,22 @@ const Card = styled.div`
     width: ${props => props.isPresident? '81%':'205px'};
     padding:12px;
     box-shadow: 0px -1px 12px rgba(255,255,255,0.5);
+    text-shadow: 2px 1px 5px rgba(255,255,255,0.64);
     transition: box-shadow .3s, width 0.3s, padding 0.3s;
+    cursor:pointer;
   }
 `
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Zoom ref={ref} {...props} />;
 });
-
+const Modal = styled(Dialog)`
+  div.MuiPaper-root {
+  color:white;
+  background-color:rgba(33, 41, 19, 0.9);
+  border:1px solid rgba(255,255,255, 0.5);
+  box-shadow:10px  10px 10px black;
+  }
+`
  const ComCard = (props) => {
   const {item,cardKey} = props;
   const [pop, setPop] = useState(false);
@@ -36,31 +45,57 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     <Card
       isPresident={cardKey===0}
       onClick={handleClickOpen}>
-        <Dialog
+        <Modal
           maxWidth={'md'}
           open={pop}
           onClose={handleClickOpen}
           onBackdropClick={handleClickOpen}
           TransitionComponent={Transition}
         >
-          <button onClick={handleClickOpen}>
 
-            <CloseIcon />
-          </button>
-          <DialogTitle style={{textAlign:'center'}}>
+          <div style={{display:'flex',flexDirection:'row'}}>
+            <button
+              style={{
+                border:'none',
+                background:'transparent'
+              }}
+              onClick={handleClickOpen}>
+
+              <CloseIcon style={{
+                width:'20px',
+                height:'20px'
+              }} />
+            </button>
+          <DialogTitle
+            style={{
+              fontWeight:'bold',
+              textAlign:'center',
+              flex:1}}>
           {item.names.map(name =>(
-            <Typography variant={'body2'}>{name}</Typography>
+            <Typography style={{fontWeight:'bold'}} variant={'body2'}>{name}</Typography>
           ))}
           </DialogTitle>
-          <hr/>
-          <DialogContent>
-          <Typography variant={'p1'}>
-            <a style={{textDecoration:'none'}}href={`mailto:${item.email}`}>{item.email}</a>
+          </div>
+          <hr style={{backgroundColor:'rgba(255,255,255,0.2)'}}/>
+          <DialogContent style={{paddingBottom:'30px'}}>
+          <Typography variant={'p2'}>
+            <a
+              style={{
+                textDecoration:'none',
+                fontStyle:'italic',
+                color:'white'
+              }}
+              href={`mailto:${item.email}`}>
+              {item.email}
+            </a>
           </Typography>
           </DialogContent>
-        </Dialog>
+        </Modal>
 
-      <Typography variant={'body1'} align={'center'} style={{width:'100%'}}>{item.title}</Typography>
+      <Typography
+        variant={'body1'}
+        align={'center'}
+        style={{width:'100%'}}>{item.title}</Typography>
     </Card>
   )
 }

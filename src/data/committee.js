@@ -5,7 +5,7 @@ const commitee = [
     email:'president@wolfsonmayball.com'
   },
   {
-    title: 'Vice-presidents',
+    title: 'Vice-Presidents',
     names: ['Lucy Clark', 'Else Ellermann'],
     email: 'vice-president@wolfsonmayball.com'
   },
@@ -20,46 +20,46 @@ const commitee = [
     email:'secretary@wolfsonmayball.com'
   },
   {
-    title:'Logistics Officer',
+    title:'Logistics',
     names:['Nermin Caber'],
     email:'logistics@wolfsonmayball.com'
   },
   {
-    title:'Marketing and Development Officers',
+    title:'Marketing & Development',
     names:['An Tran', 'Rebeka Reti'],
     email:'development@wolfsonmayball.com'
   },
   {
-    title:'Ticketing officer',
+    title:'Ticketing',
     names:['Ziming Zhu'],
     email:'ticket@wolfsonmayball.com'
   },
   {
-    title:'Graphic Design Officer',
+    title:'Graphic Design',
     names:['Jill Barkman'],
     email:'graphicdesign@wolfsonmayball.com'
   },
   {
-    title:'Decoration Officers',
+    title:'Decoration',
     names:['Jasmine Jennings', 'Tianyi Chen', 'Stephanie Hammer'],
     email:'creative@wolfsonmayball.com'
   },
   {
-    title:'Musical Entertainment Officer',
+    title:'Musical Entertainment',
     names:['Stefan Nielsen'],
     email:'music@wolfsonmayball.com'
   },{
-    title:'Non-Musical Entertainment Officers',
+    title:'Non-Musical Entertainment',
     names:['Alexander Kloss', 'Gia Kiritharan'],
     email:'entertainment@wolfsonmayball.com'
   },
   {
-    title:'IT Officer',
+    title:'IT',
     names:['Anne Aguirre'],
     email:'it@wolfsonmayball.com'
   },
   {
-    title:'Food & Drinks Officers',
+    title:'Food & Drinks',
     names:['Emma Orcutt', 'Rebecca O\'Leary', 'Harry Michalakakis'],
     email:'foodanddrinks@wolfsonmayball.com'
   }
