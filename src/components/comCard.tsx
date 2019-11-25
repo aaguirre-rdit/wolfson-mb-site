@@ -15,6 +15,12 @@ const Card = styled.div`
   @media (max-width: 580px) {
     width:80%;
   }
+  :hover{
+    width: ${props => props.isPresident? '81%':'205px'};
+    padding:12px;
+    box-shadow: 0px -1px 12px rgba(255,255,255,0.5);
+    transition: box-shadow .3s, width 0.3s, padding 0.3s;
+  }
 `
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
