@@ -128,7 +128,7 @@ const Layout = ({ children, showStars } : Props) => {
   for (let i = 0; i < 5; i++){
     // @ts-ignore
     stars.push(<Star className={'shooting-star'} style={{
-      top:Math.floor(Math.random() * Math.floor(20))+'%',
+      top:Math.floor(Math.random() * Math.floor(50))+'%',
       left:Math.floor(Math.random() * Math.floor(0))+'%'
     }}/>)
   }

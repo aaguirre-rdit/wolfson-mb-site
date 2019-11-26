@@ -41,7 +41,7 @@ const commitee = [
   },
   {
     title:'Decoration',
-    names:['Jasmine Jennings', 'Tianyi Chen', 'Stephanie Hammer'],
+    names:['Jasmine Jennings', 'Stephanie Hammer'],
     email:'creative@wolfsonmayball.com'
   },
   {
