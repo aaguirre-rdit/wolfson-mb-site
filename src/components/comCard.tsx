@@ -34,6 +34,9 @@ const Modal = styled(Dialog)`
   border:1px solid rgba(255,255,255, 0.5);
   box-shadow:10px  10px 10px black;
   }
+  div..MuiDialogTitle-root{
+    padding:unset;
+  }
 `
  const ComCard = (props) => {
   const {item,cardKey} = props;
@@ -57,7 +60,11 @@ const Modal = styled(Dialog)`
             <button
               style={{
                 border:'none',
-                background:'transparent'
+                background:'transparent',
+                position:'absolute',
+                top:'20px',
+
+
               }}
               onClick={handleClickOpen}>
 
@@ -70,6 +77,12 @@ const Modal = styled(Dialog)`
             style={{
               fontWeight:'bold',
               textAlign:'center',
+              height:'60px',
+              padding:0,
+              display:'flex',
+              flexDirection:'column',
+              justifyContent:'center',
+              alignItems:'center',
               flex:1}}>
           {item.names.map(name =>(
             <Typography style={{fontWeight:'bold'}} variant={'body2'}>{name}</Typography>
