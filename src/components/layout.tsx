@@ -49,7 +49,7 @@ const Screen = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size:length;
+  background-size:cover;
   color:white;
   overflow-y:scroll !important;
 `;
