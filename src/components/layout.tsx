@@ -49,7 +49,7 @@ const Screen = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size:cover;
+  background-size:length;
   color:white;
   overflow-y:scroll !important;
 `;
@@ -128,8 +128,8 @@ const Layout = ({ children, showStars } : Props) => {
   for (let i = 0; i < 5; i++){
     // @ts-ignore
     stars.push(<Star className={'shooting-star'} style={{
-      top:Math.floor(Math.random() * Math.floor(30))+'%',
-      left:Math.floor(Math.random() * Math.floor(60))+'%'
+      top:Math.floor(Math.random() * Math.floor(20))+'%',
+      left:Math.floor(Math.random() * Math.floor(0))+'%'
     }}/>)
   }
   return (

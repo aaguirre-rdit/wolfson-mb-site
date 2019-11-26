@@ -623,4 +623,7 @@ pre tt:after {
 html{
   overflow-x:hidden !important;
   background-color:black;
+  max-height: 100vh !important;
+  max-width: 100vw !important;
 }
+

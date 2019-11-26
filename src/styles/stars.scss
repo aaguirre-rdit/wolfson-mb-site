@@ -2,8 +2,8 @@ $shooting-time: 3000ms;
 
 .night {
   position: absolute;
-  top:25% !important;
-  left:25% !important;
+  top:15% !important;
+  left:10% !important;
   width: 50vw;
   height: 50vh;
   transform: rotateZ(45deg);
@@ -39,23 +39,23 @@ $shooting-time: 3000ms;
 
   &::after {
     @extend .shooting_star::before;
-    transform: translateX(30%) rotateZ(-45deg);
+    transform: translateX(5%) rotateZ(-45deg);
   }
 
-  @for $i from 1 through 20 {
-    &:nth-child(#{$i}) {
-      $delay: random(9999) + 0ms;
-      top: calc(50% - #{random(400) - 200px});
-      left: calc(50% - #{random(300) + 0px});
-      animation-delay: $delay;
-      // opacity: random(50) / 100 + 0.5;
-
-      &::before,
-      &::after {
-        animation-delay: $delay;
-      }
-    }
-  }
+  //@for $i from 1 through 20 {
+  //  &:nth-child(#{$i}) {
+  //    $delay: random(9999) + 0ms;
+  //    //top: calc(50% - #{random(400) - 200px});
+  //    //left: calc(50% - #{random(300) + 0px});
+  //    animation-delay: $delay;
+  //    // opacity: random(50) / 100 + 0.5;
+  //
+  //    &::before,
+  //    &::after {
+  //      animation-delay: $delay;
+  //    }
+  //  }
+  //}
 }
 
 @keyframes tail {
