@@ -51,7 +51,6 @@ const Screen = styled.div`
   background-position: center;
   background-size:cover;
   color:white;
-  overflow-y:scroll !important;
 `;
 const Comps = styled.div`
   flex:1;
@@ -140,7 +139,7 @@ const Layout = ({ children, showStars } : Props) => {
         </Night> : undefined
       }
       {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
-      <Comps>
+      {/*<Comps>*/}
 
         <Logo/>
         <VertLine height={40}/>
@@ -162,7 +161,7 @@ const Layout = ({ children, showStars } : Props) => {
           <br/>
           University of Cambridge
         </Footer>
-      </Comps>
+      {/*</Comps>*/}
     </Screen>
   )
 }
