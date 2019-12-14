@@ -16,9 +16,11 @@ import { SocialIcon } from 'react-social-icons';
 import '../styles/fireflies.scss';
 import "./layout.css";
 import * as background from "../images/comingsoon-bg.jpg"
+import * as silhouette from '../images/silhouette.png';
 interface Props {
   children?: any,
-  showStars?: boolean
+  showStars?: boolean,
+  location:object
 }
 const Footer = styled.footer`
   bottom:0 !important;
@@ -28,6 +30,8 @@ const Footer = styled.footer`
   display:flex;
   flex-direction:column;
   justify-content:space-around;
+  min-width:100vw !important;
+  align-items:center;
 `
 const Screen = styled.div`
   min-height:100vh;
@@ -70,6 +74,8 @@ const Main = styled.main`
     width: 95%;
   }
   width: 800px;
+  background:${props => props.opaque ? 'rgba(0,0,0,.5)':undefined};
+  box-shadow: ${props => props.opaque ? '0 0 5px 5px rgba(0,0,0,0.5)' :undefined};
 `
 const VertLine = styled.div`
   height:${props => props.height}px;
@@ -89,6 +95,7 @@ const SocialIconContainer = styled.div`
     width:30px;
     background:transparent;
   }
+  z-index:1;
 `
 
 const Logo = styled.img`
@@ -118,7 +125,7 @@ const Night = styled.div`
   //transform: rotateZ(45deg);
   z-index:0;
 `
-const Layout = ({ children, showStars } : Props) => {
+const Layout = ({ children, showStars, location } : Props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -128,6 +135,8 @@ const Layout = ({ children, showStars } : Props) => {
       }
     }
   `)
+  // @ts-ignore
+  const opaque = location.pathname !== '/' && location.pathname !=='/coming-soon/';
   let stars = [];
   for (let i = 0; i < 25; i++){
     // @ts-ignore
@@ -140,6 +149,7 @@ const Layout = ({ children, showStars } : Props) => {
   }
   return (
     <Screen>
+
       {showStars ?
         <Night className={'night'}>
           {stars.map(star=>star)}
@@ -151,13 +161,15 @@ const Layout = ({ children, showStars } : Props) => {
 
         <Logo/>
         <VertLine height={40}/>
-        <Main>{children}</Main>
+        <Main opaque={opaque}>{children}</Main>
         <VertLine height={50}/>
         <Navbar/>
-        <Footer>
+        <Footer
+
+        >
           <SocialIconContainer>
             <SocialIcon
-              style={{ height: 25, width: 25 }}
+              style={{ height: 25, width: 25, marginRight:'20px' }}
               url={'https://www.facebook.com/wolfsonmayball/'}
               bgColor={'white'}/>
             <SocialIcon
@@ -165,9 +177,10 @@ const Layout = ({ children, showStars } : Props) => {
               url={'https://www.instagram.com/wolfsonmayball/'}
               bgColor={'white'}/>
           </SocialIconContainer>
-          © {new Date().getFullYear()}, Wolfson College
+          <p style={{zIndex:1}}>© {new Date().getFullYear()}, Wolfson College
           <br/>
           University of Cambridge
+          </p>
         </Footer>
       {/*</Comps>*/}
     </Screen>
