@@ -30,9 +30,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const Modal = styled(Dialog)`
   div.MuiPaper-root {
   color:white;
-  background-color:rgba(33, 41, 19, 0.9);
-  border:1px solid rgba(255,255,255, 0.5);
-  box-shadow:10px  10px 10px black;
+ background: rgb(133,194,194);
+background: linear-gradient(201deg, rgba(133,194,194,1) 0%, rgba(176,142,95,1) 46%, rgba(195,118,169,1) 100%);
+ box-shadow:10px  10px 10px rgba(0,0,0,0.3);
   }
   div..MuiDialogTitle-root{
     padding:unset;

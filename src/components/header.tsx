@@ -1,42 +1,83 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from "react";
+import {Navbar, Nav, NavDropdown, Container} from "react-bootstrap";
+import styled from 'styled-components';
+import {SocialIcon} from 'react-social-icons';
+import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
+const Navigation = styled(Navbar)`
+  z-index:2;
+  top:0 !important;
+  position:absolute !important;
+  width:100%;
+  //background:rgba(255,255,255,0.3);
+  & .collapse .show{
+    background:red;
+  }
+  @media (max-width: 992px) { 
+  * > *> a {
+    color:black }
+    button.collapsed {
+      border-color:gray;
+    }
+   background:white !important;
+   color:black !important;
+   button.collapsed{
+    color:black;
+   }
+   
+   }
+`
+const Brand = styled(Navbar.Brand)`
+  @media (max-width: 992px) { 
+   color:black !important;
+   }
+`
+const Toggle = styled(Navbar.Toggle)`
+@media (max-width: 992px) { 
+   color:#2a2a2a !important;
+   }
+`
+const Link = styled(Nav.Link)`
+@media (max-width: 992px) { 
+   color:#2a2a2a !important;
+   }
+`
+const SNIcon = styled(SocialIcon)`
+ g.social-svg-mask {
+ fill:white !important;
+  @media (max-width: 992px) { 
+  fill: gray !important;
+   }
+   }
+`
+const Header = () => (
+  <Navigation
+    //fixed={'top'}
+    className={'navbar-header'}
+    collapseOnSelect expand="lg"
+    variant="dark">
+    <Brand href="/">Wolfson Mayball</Brand>
+    <Toggle id='butt' aria-controls="responsive-navbar-nav">
+      <MenuOutlinedIcon/>
+    </Toggle>
+    <Navbar.Collapse id="responsive-navbar-nav">
+      <Nav className="mr-auto">
+        <Link href="/committee">COMMITTEE</Link>
+        <Link href="/tickets">TICKETS</Link>
+        <Link href="/apply">APPLY FOR WORK</Link>
+      </Nav>
+      <Nav>
+        <div>
+        <SNIcon
+          style={{ height: 25, width: 25, marginRight:'20px' }}
+          url={'https://www.facebook.com/wolfsonmayball/'}
+        />
+        <SNIcon
+          style={{ height: 25, width: 25 }}
+          url={'https://www.instagram.com/wolfsonmayball/'}/>
+        </div>
+      </Nav>
+    </Navbar.Collapse>
+  </Navigation>)
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

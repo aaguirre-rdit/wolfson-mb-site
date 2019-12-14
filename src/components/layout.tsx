@@ -10,20 +10,23 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 import Header from "./header";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import BackgroundImage from 'gatsby-background-image';
 import Navbar from './navbar';
 import { SocialIcon } from 'react-social-icons';
 import '../styles/fireflies.scss';
 import "./layout.css";
 import * as background from "../images/comingsoon-bg.jpg"
-import * as silhouette from '../images/silhouette.png';
+
 interface Props {
   children?: any,
   showStars?: boolean,
   location:object
 }
 const Footer = styled.footer`
-  bottom:0 !important;
+  bottom:0px !important;
+  margin-bottom:0;
   height:3rem;
   font-size:14px;
   margin-top:30px;
@@ -32,6 +35,9 @@ const Footer = styled.footer`
   justify-content:space-around;
   min-width:100vw !important;
   align-items:center;
+  position:relative;
+  align-self:end;
+  z-index:0;
 `
 const Screen = styled.div`
   min-height:100vh;
@@ -65,8 +71,8 @@ const Comps = styled.div`
   z-index:1;
 `
 const Main = styled.main`
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  // border-top: 1px solid white;
+  // border-bottom: 1px solid white;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -74,8 +80,9 @@ const Main = styled.main`
     width: 95%;
   }
   width: 800px;
-  background:${props => props.opaque ? 'rgba(0,0,0,.5)':undefined};
-  box-shadow: ${props => props.opaque ? '0 0 5px 5px rgba(0,0,0,0.5)' :undefined};
+  margin-top:50px;
+  background:${props => props.opaque ? 'rgba(0,0,0,.15)':undefined};
+  box-shadow: ${props => props.opaque ? '0 0 5px 5px rgba(0,0,0,0.15)' :undefined};
 `
 const VertLine = styled.div`
   height:${props => props.height}px;
@@ -105,16 +112,6 @@ const Logo = styled.img`
   min-width:80px;
   margin-bottom:0;
 `
-const Star = styled.div`
-  position: absolute;
-  height: 2px;
-  background: linear-gradient(-45deg, rgba(250, 255, 222, 0.5), rgba(0, 0, 255, 0));
-  border-radius: 999px;
-  filter: drop-shadow(0 0 6px rgba(250, 255, 222, 0.5));
-  animation:
-    tail 3000ms ease-in-out infinite,
-    shooting 3000ms ease-in-out infinite;
-`;
 const Night = styled.div`
   display:absolute;
   height:100vh;
@@ -136,6 +133,7 @@ const Layout = ({ children, showStars, location } : Props) => {
     }
   `)
   // @ts-ignore
+
   const opaque = location.pathname !== '/' && location.pathname !=='/coming-soon/';
   let stars = [];
   for (let i = 0; i < 25; i++){
@@ -149,7 +147,7 @@ const Layout = ({ children, showStars, location } : Props) => {
   }
   return (
     <Screen>
-
+      <Header/>
       {showStars ?
         <Night className={'night'}>
           {stars.map(star=>star)}
@@ -159,24 +157,24 @@ const Layout = ({ children, showStars, location } : Props) => {
       {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
       {/*<Comps>*/}
 
-        <Logo/>
-        <VertLine height={40}/>
-        <Main opaque={opaque}>{children}</Main>
-        <VertLine height={50}/>
-        <Navbar/>
+        {/*<Logo/>*/}
+        {/*<VertLine height={40}/>*/}
+        <Main opaque={false}>{children}</Main>
+        {/*<VertLine height={50}/>*/}
+        {/*<Navbar/>*/}
         <Footer
 
         >
-          <SocialIconContainer>
-            <SocialIcon
-              style={{ height: 25, width: 25, marginRight:'20px' }}
-              url={'https://www.facebook.com/wolfsonmayball/'}
-              bgColor={'white'}/>
-            <SocialIcon
-              style={{ height: 25, width: 25 }}
-              url={'https://www.instagram.com/wolfsonmayball/'}
-              bgColor={'white'}/>
-          </SocialIconContainer>
+          {/*<SocialIconContainer>*/}
+            {/*<SocialIcon*/}
+              {/*style={{ height: 25, width: 25, marginRight:'20px' }}*/}
+              {/*url={'https://www.facebook.com/wolfsonmayball/'}*/}
+              {/*bgColor={'white'}/>*/}
+            {/*<SocialIcon*/}
+              {/*style={{ height: 25, width: 25 }}*/}
+              {/*url={'https://www.instagram.com/wolfsonmayball/'}*/}
+              {/*bgColor={'white'}/>*/}
+          {/*</SocialIconContainer>*/}
           <p style={{zIndex:1}}>© {new Date().getFullYear()}, Wolfson College
           <br/>
           University of Cambridge
