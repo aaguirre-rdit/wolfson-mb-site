@@ -36,7 +36,7 @@ const commitee = [
   },
   {
     title:'Graphic Design',
-    names:['Jill Barkman'],
+    names:['Valeria Dammicco'],
     email:'graphicdesign@wolfsonmayball.com'
   },
   {
@@ -50,7 +50,7 @@ const commitee = [
     email:'music@wolfsonmayball.com'
   },{
     title:'Non-Musical Entertainment',
-    names:['Alexander Kloss', 'Gia Kiritharan'],
+    names:['Alexander Kloss', 'Gia Kaisa'],
     email:'entertainment@wolfsonmayball.com'
   },
   {
