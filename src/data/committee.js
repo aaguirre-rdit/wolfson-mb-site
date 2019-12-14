@@ -42,7 +42,7 @@ const commitee = [
   {
     title:'Decoration',
     names:['Jasmine Jennings', 'Stephanie Hammer'],
-    email:'creative@wolfsonmayball.com'
+    email:'decoration@wolfsonmayball.com'
   },
   {
     title:'Musical Entertainment',
