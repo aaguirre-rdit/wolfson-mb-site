@@ -13,8 +13,8 @@ import Header from "./header";
 import BackgroundImage from 'gatsby-background-image';
 import Navbar from './navbar';
 import { SocialIcon } from 'react-social-icons';
-
-import "./layout.css"
+import '../styles/fireflies.scss';
+import "./layout.css";
 import * as background from "../images/comingsoon-bg.jpg"
 interface Props {
   children?: any,
@@ -110,7 +110,12 @@ const Star = styled.div`
 `;
 const Night = styled.div`
   display:absolute;
-  transform: rotateZ(45deg);
+  height:100vh;
+  width:100vw;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  //transform: rotateZ(45deg);
   z-index:0;
 `
 const Layout = ({ children, showStars } : Props) => {
@@ -124,11 +129,13 @@ const Layout = ({ children, showStars } : Props) => {
     }
   `)
   let stars = [];
-  for (let i = 0; i < 5; i++){
+  for (let i = 0; i < 25; i++){
     // @ts-ignore
-    stars.push(<Star className={'shooting-star'} style={{
-      top:Math.floor(Math.random() * Math.floor(50))+'%',
-      left:Math.floor(Math.random() * Math.floor(0))+'%'
+    stars.push(<div className={'firefly'} style={{
+      // width:'10px',
+      // height:'10px',
+      top:Math.floor(Math.random() * Math.floor(100))+'%',
+      left:Math.floor(Math.random() * Math.floor(100))+'%'
     }}/>)
   }
   return (
@@ -136,7 +143,8 @@ const Layout = ({ children, showStars } : Props) => {
       {showStars ?
         <Night className={'night'}>
           {stars.map(star=>star)}
-        </Night> : undefined
+        </Night>
+        : undefined
       }
       {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
       {/*<Comps>*/}
