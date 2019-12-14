@@ -6,10 +6,10 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import ComingSoon from './coming-soon';
 const Launch = false;
-const IndexPage = () => {
+const IndexPage = (props) => {
   useEffect(() => {navigate('/coming-soon')}, [])
   return(
-    <Layout>
+    <Layout location={props.location}>
       <SEO title="Home" />
       {/*<h1>Hi people</h1>*/}
       {/*<p>Welcome to your new Gatsby site.</p>*/}

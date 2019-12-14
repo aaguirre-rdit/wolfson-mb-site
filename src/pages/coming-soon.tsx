@@ -44,10 +44,9 @@ const glowKeyframes = keyframes`
     100% { background-position: 0 0; }
    `
 
-const  ComingSoon = () => {
-
+const  ComingSoon = (props) => {
     return(
-    <Layout showStars={true}>
+    <Layout location={props.location} showStars={true}>
 
       <SEO title="Coming Soon" />
 
