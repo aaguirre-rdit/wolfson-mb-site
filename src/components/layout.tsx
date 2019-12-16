@@ -42,6 +42,7 @@ const Footer = styled.footer`
 const Screen = styled.div`
   min-height:100vh;
   padding-top:2em;
+  font-family: Franklin Gothic;
   margin:0;
   width:100vw;
   flex:1;
@@ -134,7 +135,7 @@ const Layout = ({ children, showStars, location } : Props) => {
   `)
   // @ts-ignore
 
-  const opaque = location.pathname !== '/' && location.pathname !=='/coming-soon/';
+  //const opaque = location.pathname !== '/' && location.pathname !=='/coming-soon/';
   let stars = [];
   for (let i = 0; i < 25; i++){
     // @ts-ignore

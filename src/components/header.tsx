@@ -5,6 +5,7 @@ import {SocialIcon} from 'react-social-icons';
 import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
 const Navigation = styled(Navbar)`
   z-index:2;
+  font-family: Roboto, sans-serif;
   top:0 !important;
   position:absolute !important;
   width:100%;
@@ -61,9 +62,9 @@ const Header = () => (
     </Toggle>
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="mr-auto">
-        <Link href="/committee">COMMITTEE</Link>
-        <Link href="/tickets">TICKETS</Link>
-        <Link href="/apply">APPLY FOR WORK</Link>
+        <Link href="/committee">Committee</Link>
+        <Link href="/tickets">Tickets</Link>
+        <Link href="/apply">Apply to work</Link>
       </Nav>
       <Nav>
         <div>
