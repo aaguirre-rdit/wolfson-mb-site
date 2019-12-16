@@ -2,22 +2,38 @@ import React, {useEffect} from "react"
 import { Link, navigate } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+//import Image from "../components/image"
 import SEO from "../components/seo"
-import ComingSoon from './coming-soon';
-const Launch = false;
+import * as silhouette from '../images/silhouette.png';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+ font-family: UnifrakturMaguntia, cursive;
+ font-size:70px;
+ text-align:center;
+`;
+
+const Subtitle = styled.h3`
+  font-family: Give You Glory, cursive;
+  font-size:40px;
+  text-align:center;
+  font-weight:300;
+`
 const IndexPage = (props) => {
-  useEffect(() => {navigate('/coming-soon')}, [])
+  //useEffect(() => {navigate('/coming-soon')}, [])
   return(
-    <Layout location={props.location}>
+    <Layout location={props.location} showStars={true}>
       <SEO title="Home" />
-      {/*<h1>Hi people</h1>*/}
-      {/*<p>Welcome to your new Gatsby site.</p>*/}
-      {/*<p>Now go build something great.</p>*/}
-      {/*<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>*/}
-        {/*<Image />*/}
-      {/*</div>*/}
-      {/*<Link to="/page-2/">Go to page 2</Link>*/}
+      <Title>
+        <span
+          style={{fontSize:'100px'}}
+        >O</span>nce upon
+        <br/>a Time<br/>
+        in Wolfson
+      </Title>
+      <Subtitle>
+        DD June 2020
+      </Subtitle>
     </Layout>
   )
 }
