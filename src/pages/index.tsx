@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as silhouette from '../images/silhouette.png';
 import styled from 'styled-components';
+import {Container} from "react-bootstrap";
 
 const Title = styled.h1`
  font-family: UnifrakturMaguntia, cursive;
@@ -19,6 +20,7 @@ const Subtitle = styled.h3`
   text-align:center;
   font-weight:300;
 `
+
 const IndexPage = (props) => {
   //useEffect(() => {navigate('/coming-soon')}, [])
   return(

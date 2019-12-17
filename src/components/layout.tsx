@@ -8,17 +8,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Header from "./header";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import BackgroundImage from 'gatsby-background-image';
-import Navbar from './navbar';
 import { SocialIcon } from 'react-social-icons';
 import '../styles/fireflies.scss';
 import "./layout.css";
 import * as background from "../images/comingsoon-bg.jpg"
-
+import * as silhouette from '../images/silhouette-crop.png';
+import * as cloud from '../images/cloud.png';
 interface Props {
   children?: any,
   showStars?: boolean,
@@ -37,7 +35,7 @@ const Footer = styled.footer`
   align-items:center;
   position:relative;
   align-self:end;
-  z-index:0;
+  z-index:1;
 `
 const Screen = styled.div`
   min-height:100vh;
@@ -63,6 +61,25 @@ const Screen = styled.div`
   background-size:cover;
   color:white;
 `;
+const CloudAnim = keyframes`
+  0% { 
+    background-position:0px;
+    }
+  100% {
+  background-position:5440px;
+  }  
+`
+const Cloud = styled.div`
+  min-height:100vh;
+  min-width:100vw;
+  position:absolute;
+  background:url(${cloud});
+  background-size:cover;
+  top:0;
+  left:0;
+  animation:${CloudAnim} 60s linear infinite;
+  opacity:0.3;
+`
 const Comps = styled.div`
   flex:1;
   display:flex;
@@ -123,6 +140,18 @@ const Night = styled.div`
   //transform: rotateZ(45deg);
   z-index:0;
 `
+const SilContainer = styled.div`
+  min-width: 100vw;
+  position: fixed;
+  bottom:0;
+  height:250px;
+  z-index:0;
+  background:url(${silhouette});
+  background-position:top;
+  background-repeat:no-repeat;
+  background-size:cover;
+  overflow-y:hidden;
+`
 const Layout = ({ children, showStars, location } : Props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -148,6 +177,7 @@ const Layout = ({ children, showStars, location } : Props) => {
   }
   return (
     <Screen>
+      {/*<Cloud/>*/}
       <Header/>
       {showStars ?
         <Night className={'night'}>
@@ -155,32 +185,17 @@ const Layout = ({ children, showStars, location } : Props) => {
         </Night>
         : undefined
       }
-      {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
-      {/*<Comps>*/}
 
-        {/*<Logo/>*/}
-        {/*<VertLine height={40}/>*/}
         <Main opaque={false}>{children}</Main>
-        {/*<VertLine height={50}/>*/}
-        {/*<Navbar/>*/}
-        <Footer
 
+        <Footer
         >
-          {/*<SocialIconContainer>*/}
-            {/*<SocialIcon*/}
-              {/*style={{ height: 25, width: 25, marginRight:'20px' }}*/}
-              {/*url={'https://www.facebook.com/wolfsonmayball/'}*/}
-              {/*bgColor={'white'}/>*/}
-            {/*<SocialIcon*/}
-              {/*style={{ height: 25, width: 25 }}*/}
-              {/*url={'https://www.instagram.com/wolfsonmayball/'}*/}
-              {/*bgColor={'white'}/>*/}
-          {/*</SocialIconContainer>*/}
           <p style={{zIndex:1}}>© {new Date().getFullYear()}, Wolfson College
           <br/>
           University of Cambridge
           </p>
         </Footer>
+      <SilContainer/>
       {/*</Comps>*/}
     </Screen>
   )
