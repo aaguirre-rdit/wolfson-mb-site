@@ -195,7 +195,8 @@ const Layout = ({ children, showStars, location } : Props) => {
           University of Cambridge
           </p>
         </Footer>
-      <SilContainer/>
+      {showStars ? <SilContainer/> : undefined}
+
       {/*</Comps>*/}
     </Screen>
   )

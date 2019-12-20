@@ -4,7 +4,7 @@ import { Link, navigate } from "gatsby"
 import Layout from "../components/layout"
 //import Image from "../components/image"
 import SEO from "../components/seo"
-import * as silhouette from '../images/silhouette.png';
+import * as mainlogo from '../images/handdrawn-03-transparent-white.png';
 import styled from 'styled-components';
 import {Container} from "react-bootstrap";
 
@@ -20,19 +20,26 @@ const Subtitle = styled.h3`
   text-align:center;
   font-weight:300;
 `
-
+const MainLogo = styled.div`
+  height:400px;
+  width:80%;
+  
+  > img {
+    background-size: cover;
+    background-position:center;
+    background-repeat:no-repeat;
+  }
+`
 const IndexPage = (props) => {
   //useEffect(() => {navigate('/coming-soon')}, [])
   return(
     <Layout location={props.location} showStars={true}>
       <SEO title="Home" />
-      <Title>
-        <span
-          style={{fontSize:'100px'}}
-        >O</span>nce upon
-        <br/>a Time<br/>
-        in Wolfson
-      </Title>
+      <MainLogo>
+      <img
+        src={mainlogo}
+      />
+      </MainLogo>
       <Subtitle>
         DD June 2020
       </Subtitle>
