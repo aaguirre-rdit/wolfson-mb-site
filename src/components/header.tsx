@@ -65,6 +65,7 @@ const Header = () => (
         <Link href="/committee">Committee</Link>
         <Link href="/tickets">Tickets</Link>
         <Link href="/apply">Apply to work</Link>
+        <Link href="/gallery">Gallery</Link>
       </Nav>
       <Nav>
         <div>
