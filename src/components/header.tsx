@@ -31,6 +31,8 @@ const Brand = styled(Navbar.Brand)`
   @media (max-width: 992px) { 
    color:black !important;
    }
+   font-size:18px !important;
+   padding-bottom: .4125rem !important;
 `
 const Toggle = styled(Navbar.Toggle)`
 @media (max-width: 992px) { 
@@ -40,6 +42,13 @@ const Toggle = styled(Navbar.Toggle)`
 const Link = styled(Nav.Link)`
 @media (max-width: 992px) { 
    color:#2a2a2a !important;
+   }
+   font-size:14px;
+   &:hover {
+      text-shadow:1px -1px 3px rgba(0,0,0,.6);
+      font-size:bold;
+      transition:text-shadow .3s, font-size .3s;
+      
    }
 `
 const SNIcon = styled(SocialIcon)`
