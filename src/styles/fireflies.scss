@@ -96,3 +96,11 @@ position: fixed;
     box-shadow: 0 0 2vw 0.4vw hotpink;
   }
 }
+.ticketWidget{ width:80% !important;
+  min-height:400px !important;
+  border:1px solid rgba(255,255,255,0.5);
+  @media (max-width: 500px) {
+    width: 100vw !important;
+    height:100vh !important;
+  }
+}
