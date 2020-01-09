@@ -4,7 +4,7 @@ import { Dialog, Typography, Zoom, DialogTitle, DialogContent } from "@material-
 import CloseIcon from '@material-ui/icons/Close';
 const Card = styled.div`
   width: ${props => props.isPresident? '80%':'200px'};
-  height: 120px;
+  height: 120px !important;
   margin:10px;
   padding:10px;
   align-items:center;

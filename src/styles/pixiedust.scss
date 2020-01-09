@@ -1,0 +1,70 @@
+@-webkit-keyframes bubbles-rise {
+  100% {
+    -webkit-transform: translateY(-100px) scale(0.5);
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes bubbles-rise {
+  100% {
+    -webkit-transform: translateY(-100px) scale(0.5);
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+.navbar-nav > li:hover > a:after{
+  content: '';
+  background: #cccccc;
+  border-radius: 50%;
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  bottom:20px;
+  left:10px;
+  -webkit-animation: bubbles-rise 2s infinite;
+  animation: bubbles-rise 2s infinite;
+}
+
+.navbar-nav li > a:before{
+  content: '';
+  background: #DEF7FE;
+  border-radius: 50%;
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  bottom:20px;
+  left:0;
+  -webkit-animation: bubbles-rise 3s infinite;
+  animation: bubbles-rise 3s infinite;
+}
+
+.navbar-nav li >a:hover:after{
+  content: '';
+  background: #ABE4F8;
+  border-radius: 50%;
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  bottom:20px;
+  right:15px;
+  -webkit-animation: bubbles-rise 3s infinite;
+  animation: bubbles-rise 3s infinite;
+}
+
+.navbar-nav a:hover:before{
+  content: '';
+  background: #dddddd;
+  border-radius: 50%;
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  bottom:20px;
+  right:3px;;
+  -webkit-animation: bubbles-rise 4s infinite;
+  animation: bubbles-rise 4s infinite;
+}

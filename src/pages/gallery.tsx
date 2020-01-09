@@ -31,10 +31,35 @@ const Gallery = (props) => {
   return(
     <Layout location={props.location}>
       <SEO description={'Gallery of past Wolfson Mayballs'} lang={'en'} title={'Gallery'}/>
+      <h4
+        style={{
+          paddingTop:'50px',
+          width:'100%',
+          textAlign:'center',
+          borderBottom:'1px solid white'
+        }}
+      >2020</h4>
+      <h4
+        style={{
+          paddingTop:'50px',
+          width:'100%',
+          textAlign:'center',
+          borderBottom:'1px solid white'
+        }}
+      >2019</h4>
       <GContainer>
       <PhotoGallery
         onClick={openLightbox}
         photos={photos}/>
+        <h4
+          style={{
+            paddingTop:'50px',
+            textAlign:'center',
+            marginBottom:'100px',
+            borderBottom:'1px solid white'
+          }}
+        >2018</h4>
+
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>

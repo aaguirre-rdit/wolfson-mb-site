@@ -15,7 +15,7 @@ import { SocialIcon } from 'react-social-icons';
 import '../styles/fireflies.scss';
 import "./layout.css";
 import * as background from "../images/comingsoon-bg.jpg"
-import * as silhouette from '../images/silhouette-crop.png';
+import * as bare from '../images/comingsoon-bg-bare.jpg';
 import * as cloud from '../images/cloud.png';
 interface Props {
   children?: any,
@@ -27,14 +27,17 @@ const Footer = styled.footer`
   margin-bottom:0;
   height:3rem;
   font-size:14px;
-  margin-top:30px;
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   justify-content:space-around;
   min-width:100vw !important;
   align-items:center;
-  position:relative;
+  position:fixed;
   align-self:end;
+  p {
+    padding:0 20px;
+    margin-bottom:0;
+  }
   z-index:1;
 `
 const Screen = styled.div`
@@ -49,12 +52,14 @@ const Screen = styled.div`
   align-items:center;
   justify-content:center;
   background-color:black;
+  overflow-y:${props => props.bare? 'hidden':'auto'};
+  seamless:seamless;
   background:
   linear-gradient(
       rgba(0, 0, 0, 0.45), 
       rgba(0, 0, 0, 0.25)
     ),
-  url(${background});
+  url(${props => props.bare? bare: background});
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -113,6 +118,7 @@ const SocialIconContainer = styled.div`
   flex-direction:row;
   justify-content:space-around;
   align-items:center;
+  
   flex:1;
   svg:hover, a:hover{
     box-shadow:1px 1px 24px rgba(255,255,255,.5);
@@ -120,6 +126,8 @@ const SocialIconContainer = styled.div`
     width:30px;
     background:transparent;
   }
+  padding-top:30px !important;
+  padding-left:20px;
   z-index:1;
 `
 
@@ -140,17 +148,13 @@ const Night = styled.div`
   //transform: rotateZ(45deg);
   z-index:0;
 `
-const SilContainer = styled.div`
-  min-width: 100vw;
-  position: fixed;
-  bottom:0;
-  height:250px;
-  z-index:0;
-  background:url(${silhouette});
-  background-position:top;
-  background-repeat:no-repeat;
-  background-size:cover;
-  overflow-y:hidden;
+const SNIcon = styled(SocialIcon)`
+ g.social-svg-mask {
+ fill:white !important;
+  @media (max-width: 992px) { 
+  fill: gray !important;
+   }
+   }
 `
 const Layout = ({ children, showStars, location } : Props) => {
   const data = useStaticQuery(graphql`
@@ -176,7 +180,9 @@ const Layout = ({ children, showStars, location } : Props) => {
     }}/>)
   }
   return (
-    <Screen>
+    <Screen
+      bare={!showStars}
+    >
       {/*<Cloud/>*/}
       <Header/>
       {showStars ?
@@ -190,12 +196,23 @@ const Layout = ({ children, showStars, location } : Props) => {
 
         <Footer
         >
+          <div style={{marginLeft:'-14.5%'}}>
           <p style={{zIndex:1}}>© {new Date().getFullYear()}, Wolfson College
           <br/>
           University of Cambridge
           </p>
+          </div>
+          <div style={{marginRight:'-15%'}}>
+            <SNIcon
+              style={{ height: 25, width: 25, marginRight:'20px' }}
+              url={'https://www.facebook.com/wolfsonmayball/'}
+            />
+            <SNIcon
+              style={{ height: 25, width: 25 }}
+              url={'https://www.instagram.com/wolfsonmayball/'}/>
+          </div>
         </Footer>
-      {showStars ? <SilContainer/> : undefined}
+      {/*{showStars ? <SilContainer/> : undefined}*/}
 
       {/*</Comps>*/}
     </Screen>
