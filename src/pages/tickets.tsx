@@ -1,7 +1,9 @@
 import React from "react"
 import styled from 'styled-components';
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from "../components/seo";
+import Countdown from 'react-countdown-now';
+
 const IFrame = styled.iframe`
   width:100% !important;
   height:500px !important;
@@ -24,14 +26,71 @@ const IFrame = styled.iframe`
     border-color:none !important;
   }
 `
-const IndexPage = (props) => {
+const CountdownContainer = styled.div`
+  display:flex;
+  justify-content:center;
+  width:340px;
+  align-items:center;
+  > div{
+    height:75px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.7);
+    font-size:2.5rem;
+    color:rgba(255,255,255,0.7);
+    flex:1;
+    font-weight:bolder;
+    text-align:center;
+    font-family:'Pinyon Script', cursive;
+    margin:0 5px;
+    > p{
+      font-size:.7rem;
+      font-weight:300;
+      margin-top:-15px;
+      font-family: Roboto, sans-serif;
+    }
+  }
+`
+const openDate = new Date(2020, 0, 18, 18);
+const Tickets = ()=> (
+  <IFrame className='ticketWidget'
+          src="https://fixr.co/event/813970428?compact=true&dark=false">
+  </IFrame>
+)
+const renderer = ({ days,hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <Tickets/>;
+  } else {
+    // Render a countdown
+    return <>
+      <h5
+        style={{
+          fontSize:'2rem',
+          textAlign:'center',
+          fontWeight:300
+        }}
+      >The ticket sales will open in:</h5>
+        <br/>
+      <CountdownContainer>
+        <div>{days}<p>Days</p></div>
+        <div>{hours}<p>Hours</p></div>
+        <div>{minutes}<p>Mins</p></div>
+        <div>{seconds}<p>Secs</p></div>
+      </CountdownContainer>
+
+      </>
+  }
+};const IndexPage = (props) => {
   console.log({props})
   return(
     <Layout location={props.location}>
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
+      </style>
       <SEO title="Tickets" />
-      <IFrame className='ticketWidget'
-              src="https://fixr.co/event/813970428?compact=true&dark=false">
-      </IFrame>
+      <Countdown
+        renderer={renderer}
+        date={openDate}/>
     </Layout>
   )
 }
