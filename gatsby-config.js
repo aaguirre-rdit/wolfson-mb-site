@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Wolfson May Ball 2020`,
-    description: `Stay tuned for Wolfson College's 3rd May Ball!s.`,
+    description: `Stay tuned for Wolfson College's 3rd May Ball!`,
     author: `@aaguirre-rdit`,
   },
   plugins: [

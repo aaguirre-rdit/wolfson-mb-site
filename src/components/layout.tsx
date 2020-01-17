@@ -205,7 +205,7 @@ const Layout = ({ children, showStars, location } : Props) => {
           University of Cambridge
           </p>
           </div>
-          <div style={{marginRight:'-15%'}}>
+          <div style={{marginRight:'-17%'}}>
             <SNIcon
               style={{ height: 25, width: 25, marginRight:'20px' }}
               url={'https://www.facebook.com/wolfsonmayball/'}
