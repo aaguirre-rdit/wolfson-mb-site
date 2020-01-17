@@ -59,6 +59,7 @@ const Link = styled(Nav.Link)`
       font-size:bold;
       transition:text-shadow .3s, font-size .3s;
    }
+   color:${props => props.disabled? 'grey': undefined};s
   
    
 `
@@ -113,7 +114,9 @@ const Header = () => (
         }}
       >
         <li><Link href="/tickets">Tickets</Link></li>
-        <li><Link href="/apply">Apply to work</Link></li>
+        {/*<li><Link href="/apply">Apply to work</Link></li>*/}
+
+        <li><Link disabled={true} href="">Apply to work</Link></li>
         <li><Link href="/gallery">Gallery</Link></li>
       </div>
         {/*<div>*/}

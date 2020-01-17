@@ -70,7 +70,7 @@ position: fixed;
     }
 
 
-    @keyframes move#{$i}{
+    @-webkit-keyframes move#{$i}{
       @for $step from 0 through $steps {
         #{$step * (100 / $steps)}% {
           transform: translateX(random(100) - 50 vw) translateY(random(100) - 50 vh) scale(random(75) / 100 + .25);
@@ -80,7 +80,7 @@ position: fixed;
   }
 }
 
-@keyframes drift {
+@-webkit-keyframes drift {
   0% {
     transform: rotate(0deg);
   }
@@ -88,7 +88,7 @@ position: fixed;
     transform: rotate(360deg);
   }
 }
-@keyframes flash {
+@-webkit-keyframes flash {
 
   0%, 30%, 100% {
     opacity: 0;
