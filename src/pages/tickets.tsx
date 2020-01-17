@@ -29,7 +29,7 @@ const IFrame = styled.iframe`
 const CountdownContainer = styled.div`
   display:flex;
   justify-content:center;
-  width:340px;
+  width:300px;
   align-items:center;
   > div{
     height:75px;
@@ -89,7 +89,8 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
 
       </div>
   }
-};const IndexPage = (props) => {
+};
+const IndexPage = (props) => {
   return(
     <Layout location={props.location}>
       <style>
