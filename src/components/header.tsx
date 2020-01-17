@@ -1,9 +1,8 @@
 import React from "react";
-import {Navbar, Nav, NavDropdown, Container} from "react-bootstrap";
+import {Navbar, Nav} from "react-bootstrap";
 import styled, { keyframes } from 'styled-components';
 import {SocialIcon} from 'react-social-icons';
 import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
-import '../styles/pixiedust.scss';
 import * as logo from '../images/logo.png';
 const Navigation = styled(Navbar)`
   z-index:2;
@@ -34,6 +33,7 @@ const Navigation = styled(Navbar)`
 const Brand = styled(Navbar.Brand)`
   @media (max-width: 992px) { 
    color:black !important;
+   display:none !important;
    }
    font-size:20px !important;
    padding-bottom: 1rem !important;
@@ -59,75 +59,58 @@ const Link = styled(Nav.Link)`
       font-size:bold;
       transition:text-shadow .3s, font-size .3s;
    }
-   color:${props => props.disabled? 'grey': undefined};s
+   color:${props => props.disabled? 'grey': undefined};
   
    
 `
 const SNIcon = styled(SocialIcon)`
  g.social-svg-mask {
  fill:white !important;
-  @media (max-width: 992px) { 
-  fill: gray !important;
-   }
    }
 `
-
+const NavCont = styled.div`
+  flex:1;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:row;
+  max-width:300px;
+  @media (max-width: 992px) { 
+    flex-direction:column;
+    max-width:100%;
+   }
+`
 const Header = () => (
   <Navigation
     //fixed={'top'}
-    className={'navbar-header'}
+    className={'navbar-header desktop-navbar'}
     collapseOnSelect expand="lg"
     variant="dark">
 
     <Toggle id='butt' aria-controls="responsive-navbar-nav">
       <MenuOutlinedIcon/>
     </Toggle>
-    <Navbar.Collapse id="responsive-navbar-nav">
+    <Navbar.Collapse id="responsive-navbar-nav" >
       <Nav
         style={{
           flex:1,
           width:'100vw',
           justifyContent:'space-around'
         }}
-        className="mr-auto">
-        <div
-          style={{
-            flex:1,
-            display:'flex',
-            justifyContent:'space-around',
-            maxWidth:'300px'
-          }}
-        >
+        className="mr-auto desktop-navbar">
+        <NavCont>
         <li><Link href="/">Wolfson Mayball</Link></li>
         <li><Link href="/committee">Committee</Link></li>
-        </div>
+        </NavCont>
 
         <Brand href="/">
         </Brand>
-      <div
-        style={{
-          flex:1,
-          display:'flex',
-          justifyContent:'space-around',
-          maxWidth:'300px'
-
-        }}
-      >
+      <NavCont>
         <li><Link href="/tickets">Tickets</Link></li>
         {/*<li><Link href="/apply">Apply to work</Link></li>*/}
 
         <li><Link disabled={true} href="">Apply to work</Link></li>
         <li><Link href="/gallery">Gallery</Link></li>
-      </div>
-        {/*<div>*/}
-          {/*<SNIcon*/}
-            {/*style={{ height: 25, width: 25, marginRight:'20px' }}*/}
-            {/*url={'https://www.facebook.com/wolfsonmayball/'}*/}
-          {/*/>*/}
-          {/*<SNIcon*/}
-            {/*style={{ height: 25, width: 25 }}*/}
-            {/*url={'https://www.instagram.com/wolfsonmayball/'}/>*/}
-        {/*</div>*/}
+      </NavCont>
       </Nav>
     </Navbar.Collapse>
   </Navigation>)

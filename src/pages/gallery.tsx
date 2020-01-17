@@ -18,13 +18,12 @@ const Gallery = (props) => {
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
   const openLightbox = useCallback((event, { photo, index }) => {
-    console.log('open!!')
-    setCurrentImage(index);
+    setCurrentImage(photo.id-1);
     setViewerIsOpen(true);
   }, []);
 
   const closeLightbox = () => {
-    setCurrentImage(0);
+    setCurrentImage(1);
     setViewerIsOpen(false);
   };
 
@@ -39,6 +38,7 @@ const Gallery = (props) => {
           borderBottom:'1px solid white'
         }}
       >2020</h4>
+      <h5>Coming soon!</h5>
       <h4
         style={{
           paddingTop:'50px',
@@ -48,9 +48,9 @@ const Gallery = (props) => {
         }}
       >2019</h4>
       <GContainer>
-      <PhotoGallery
-        onClick={openLightbox}
-        photos={photos}/>
+        <PhotoGallery
+          onClick={openLightbox}
+          photos={photos.slice(11)}/>
         <h4
           style={{
             paddingTop:'50px',
@@ -59,6 +59,9 @@ const Gallery = (props) => {
             borderBottom:'1px solid white'
           }}
         >2018</h4>
+        <PhotoGallery
+          onClick={openLightbox}
+          photos={photos.slice(3,11)}/>
 
         <ModalGateway>
           {viewerIsOpen ? (

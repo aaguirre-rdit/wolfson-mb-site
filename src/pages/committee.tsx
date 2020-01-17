@@ -28,6 +28,7 @@ const Mailto = styled.a`
   text-decoration:none;
 `;
 const CommitteeContainer = styled.div`
+    all:unset;
     display:flex;
     flex-wrap:wrap;
     align-items:center;
@@ -42,12 +43,9 @@ const SecondPage = (props) => {
     <Typography variant={'h6'}>Wolfson College 2020 May Ball Committee</Typography>
     <Typography variant={'subtitle2'}>Our teams are here to help</Typography>
     <div style={{padding:'2em 0'}}>
-        <CommitteeContainer>
-    <ComCard item={data[0]} key={'comcard-0'} cardKey={0}/>
-        </CommitteeContainer>
-    <CommitteeContainer>
+    <CommitteeContainer className={'com-cont'}>
         {
-            data.slice(1).map((item,index) => (
+            data.map((item,index) => (
               <ComCard item={item} cardKey={index+1} key={'comcard-'+(1+index)}/>
 
             ))

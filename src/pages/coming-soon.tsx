@@ -2,30 +2,9 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Layout from "../components/layout";
 import * as background from '../images/comingsoon-bg.jpg';
-import  '../styles/stars.scss';
 
 import SEO from "../components/seo";
-const Screen = styled.div`
-  height:100vh;
-  margin:0;
-  min-width:100vw;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background-image:url(${background});
-  background-repeat: no-repeat;
-  background-attachment: cover;
-  background-position: center;
-  background-size:cover;
-  ::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
-`;
+
 const Typo = styled.p`
   
   text-align:center;
@@ -39,11 +18,6 @@ const Typo = styled.p`
   }
 `
 
-const glowKeyframes = keyframes`
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-   `
 
 const  ComingSoon = (props) => {
     return(

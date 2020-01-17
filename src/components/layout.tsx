@@ -17,13 +17,16 @@ import "./layout.css";
 import * as background from "../images/comingsoon-bg.jpg"
 import * as bare from '../images/comingsoon-bg-bare.jpg';
 import * as cloud from '../images/cloud.png';
+import '../styles/pixiedust.scss';
+
 interface Props {
   children?: any,
   showStars?: boolean,
   location:object
 }
 const Footer = styled.footer`
-  bottom:0px !important;
+  bottom:0 !important;
+  left:0;
   margin-bottom:0;
   height:3rem;
   font-size:14px;
@@ -32,7 +35,7 @@ const Footer = styled.footer`
   justify-content:space-around;
   min-width:100vw !important;
   align-items:center;
-  position:fixed;
+  position:${props => props.main ? 'absolute':'relative'};
   align-self:end;
   p {
     padding:0 20px;
@@ -140,7 +143,6 @@ const Logo = styled.img`
 `
 const Night = styled.div`
   display:absolute;
-  height:100vh;
   width:100vw;
   display:flex;
   justify-content:center;
@@ -167,7 +169,7 @@ const Layout = ({ children, showStars, location } : Props) => {
     }
   `)
   // @ts-ignore
-
+  const isMain = location.pathname === '/' || location.pathname === '';
   //const opaque = location.pathname !== '/' && location.pathname !=='/coming-soon/';
   let stars = [];
   for (let i = 0; i < 25; i++){
@@ -195,6 +197,7 @@ const Layout = ({ children, showStars, location } : Props) => {
         <Main opaque={false}>{children}</Main>
 
         <Footer
+          main={isMain}
         >
           <div style={{marginLeft:'-14.5%'}}>
           <p style={{zIndex:1}}>© {new Date().getFullYear()}, Wolfson College
@@ -212,9 +215,6 @@ const Layout = ({ children, showStars, location } : Props) => {
               url={'https://www.instagram.com/wolfsonmayball/'}/>
           </div>
         </Footer>
-      {/*{showStars ? <SilContainer/> : undefined}*/}
-
-      {/*</Comps>*/}
     </Screen>
   )
 }
