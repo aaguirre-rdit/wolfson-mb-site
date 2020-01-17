@@ -63,7 +63,8 @@ position: fixed;
   $rotationSpeed: random(10) + 8s;
 
   .firefly:nth-child(#{$i}) {
-    -webkit-animation-name: move#{$i};
+    -webkit-animation:move#{$i};
+    -webkit-animation-name: move#{$i} !important;
     animation-name: move#{$i};
 
     &::before {
@@ -83,7 +84,9 @@ position: fixed;
 
     @-webkit-keyframes move#{$i}{
       @for $step from 0 through $steps {
-        #{$step * (100 / $steps)}% {
+        #{$step * (100 / $steps)} % {
+          -moz-transform: translateX(random(100) - 50 vw) translateY(random(100) - 50 vh) scale(random(75) / 100 + .25 );
+          -ms-transform: translateX(random(100) - 50 vw) translateY(random(100) - 50 vh) scale(random(75) / 100 + .25 );
           -webkit-transform: translateX(random(100) - 50 vw) translateY(random(100) - 50 vh) scale(random(75) / 100 + .25 );
           transform: translateX(random(100) - 50 vw) translateY(random(100) - 50 vh) scale(random(75) / 100 + .25 );
         }
