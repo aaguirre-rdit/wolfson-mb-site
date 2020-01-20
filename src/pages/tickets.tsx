@@ -50,7 +50,7 @@ const CountdownContainer = styled.div`
     }
   }
 `
-const openDate = new Date(2020, 0, 18, 18);
+const openDate = new Date(2020, 0, 21, 18);
 
 const renderer = ({ days,hours, minutes, seconds, completed }) => {
 
@@ -80,12 +80,12 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
         }}
       >The ticket sales will open in:</h5>
         <br/>
-      <CountdownContainer className={'countdown'}>
-        <div>{days}<p>Days</p></div>
-        <div>{hours}<p>Hours</p></div>
-        <div>{minutes}<p>Mins</p></div>
-        <div>{seconds}<p>Secs</p></div>
-      </CountdownContainer>
+      <>
+        <IFrame className='ticketWidget'
+                src="https://fixr.co/event/813970428?compact=true&dark=false">
+        </IFrame>
+        <a href={TandC} target={'_blank'}>Terms and conditions</a>
+      </>
 
       </div>
   }
