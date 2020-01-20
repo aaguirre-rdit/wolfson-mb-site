@@ -80,12 +80,12 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
         }}
       >The ticket sales will open in:</h5>
         <br/>
-      <>
-        <IFrame className='ticketWidget'
-                src="https://fixr.co/event/813970428?compact=true&dark=false">
-        </IFrame>
-        <a href={TandC} target={'_blank'}>Terms and conditions</a>
-      </>
+      <CountdownContainer className={'countdown'}>
+        <div>{days}<p>Days</p></div>
+        <div>{hours}<p>Hours</p></div>
+        <div>{minutes}<p>Mins</p></div>
+        <div>{seconds}<p>Secs</p></div>
+      </CountdownContainer>
 
       </div>
   }
