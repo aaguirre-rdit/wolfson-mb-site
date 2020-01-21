@@ -80,12 +80,12 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
         }}
       >The ticket sales will open in:</h5>
         <br/>
-      <CountdownContainer className={'countdown'}>
-        <div>{days}<p>Days</p></div>
-        <div>{hours}<p>Hours</p></div>
-        <div>{minutes}<p>Mins</p></div>
-        <div>{seconds}<p>Secs</p></div>
-      </CountdownContainer>
+      <>
+        <IFrame className='ticketWidget'
+                src="https://fixr.co/event/813970428?compact=true&dark=false">
+        </IFrame>
+        <a href={TandC} target={'_blank'}>Terms and conditions</a>
+      </>
 
       </div>
   }
@@ -97,9 +97,12 @@ const IndexPage = (props) => {
         @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
       </style>
       <SEO title="Tickets" />
-      <Countdown
-        renderer={renderer}
-        date={openDate}/>
+      <>
+        <IFrame className='ticketWidget'
+                src="https://fixr.co/event/813970428?compact=true&dark=false">
+        </IFrame>
+        <a href={TandC} target={'_blank'}>Terms and conditions</a>
+      </>
     </Layout>
   )
 }
