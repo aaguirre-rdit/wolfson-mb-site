@@ -34,6 +34,8 @@ const Footer = styled.footer`
   flex-direction:row;
   justify-content:space-around;
   min-width:100vw !important;
+  max-width:100vw !important;
+  overflow-x:hidden;
   align-items:center;
   position:${props => props.main ? 'absolute':'relative'};
   align-self:end;
@@ -106,6 +108,7 @@ const Main = styled.main`
     width: 95%;
   }
   width: 800px;
+  min-height:60vh;
   margin-top:50px;
   background:${props => props.opaque ? 'rgba(0,0,0,.15)':undefined};
   box-shadow: ${props => props.opaque ? '0 0 5px 5px rgba(0,0,0,0.15)' :undefined};
@@ -158,6 +161,14 @@ const SNIcon = styled(SocialIcon)`
    }
    }
 `
+const IconContainer = styled.div`
+  margin-right:-17%;
+  @media (max-width: 992px){
+    nargin-right:unset;
+    padding-right:30px;
+  }
+`
+
 const Layout = ({ children, showStars, location } : Props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -205,7 +216,7 @@ const Layout = ({ children, showStars, location } : Props) => {
           University of Cambridge
           </p>
           </div>
-          <div style={{marginRight:'-17%'}}>
+          <IconContainer>
             <SNIcon
               style={{ height: 25, width: 25, marginRight:'20px' }}
               url={'https://www.facebook.com/wolfsonmayball/'}
@@ -213,7 +224,7 @@ const Layout = ({ children, showStars, location } : Props) => {
             <SNIcon
               style={{ height: 25, width: 25 }}
               url={'https://www.instagram.com/wolfsonmayball/'}/>
-          </div>
+          </IconContainer>
         </Footer>
     </Screen>
   )

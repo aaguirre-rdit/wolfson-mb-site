@@ -88,6 +88,87 @@ const photos = [
     width: 1,
     height: 1,
     id:15
-  }
+  },{
+    src: require('../images/gallery/gallery16.jpg'),
+    width: 4,
+    height: 3,
+    id:16
+  },
+  {
+    src: require('../images/gallery/gallery17.jpg'),
+    width: 4,
+    height: 3,
+    id:17
+  },
+  {
+    src: require('../images/gallery/gallery18.jpg'),
+    width: 4,
+    height: 3,
+    id:18
+  },{
+    src: require('../images/gallery/gallery19.jpg'),
+    width: 4,
+    height: 3,
+    id:19
+  },
+  {
+    src: require('../images/gallery/gallery20.jpg'),
+    width: 4,
+    height: 3,
+    id:20
+  },{
+    src: require('../images/gallery/gallery21.jpg'),
+    width: 4,
+    height: 3,
+    id:21
+  },
+  {
+    src: require('../images/gallery/gallery22.jpg'),
+    width: 4,
+    height: 3,
+    id:22
+  },
+  {
+    src: require('../images/gallery/gallery23.jpg'),
+    width: 4,
+    height: 3,
+    id:23
+  },
+  {
+    src: require('../images/gallery/gallery24.jpg'),
+    width: 4,
+    height: 3,
+    id:24
+  },
+  {
+    src: require('../images/gallery/gallery25.jpg'),
+    width: 4,
+    height: 3,
+    id:25
+  },
+  {
+    src: require('../images/gallery/gallery26.jpg'),
+    width: 4,
+    height: 3,
+    id:26
+  },
+  {
+    src: require('../images/gallery/gallery27.jpg'),
+    width: 4,
+    height: 3,
+    id:27
+  },
+  {
+    src: require('../images/gallery/gallery28.jpg'),
+    width: 4,
+    height: 3,
+    id:28
+  },
+  {
+    src: require('../images/gallery/gallery29.jpg'),
+    width: 4,
+    height: 3,
+    id:29
+  },
 ];
 export default photos;

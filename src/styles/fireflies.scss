@@ -188,3 +188,85 @@ position: fixed;
 ::-webkit-scrollbar{
   display:none;
 }
+.ticket-container{
+  margin-top:50px;
+  display:flex;
+  flex-wrap:wrap;
+  width:80%;
+  justify-content:space-around;
+  align-items:center;
+  @media (max-width:700px){
+    flex-direction:column;
+    align-items:center;
+  }
+  margin-bottom:20px;
+}
+.ticket{
+  display:flex;
+  flex-direction:column;
+  cursor: pointer;
+  > h3, h4 {
+    text-align:center;
+    padding:20px 0;
+  }
+  width:27%;
+  height:300px;
+
+  @media (max-width:700px){
+    width:90%;
+    margin:20px 0;
+    align-items:center;
+    height:unset;
+  }
+  background:rgba(255, 255, 255, 0.3);
+  border:solid 1px white;
+  border-radius:10px;
+  color:white;
+
+  transition: 0.5s box-shadow;
+  > ul {
+    font-size:13px;
+    list-style-type: none;
+
+  }
+  > ul > li {
+    padding: 0 10px !important;
+  }
+  > h3 {
+    font-size:40px;
+    padding:15px 10px 0px 10px;
+  }
+  >hr{
+    background:white;
+  }
+  > h4 {
+    padding-bottom:13px;
+  }
+  > ul > li > svg{
+    font-size:14px !important;
+    margin-right:5px;
+  }
+  > ul > li > svg.ticket-adv {
+    color:red;
+    font-size:15px;
+  }
+  font-family: Helvetica, sans-serif;
+}
+div.vip {
+  width:37%;
+  height:350px !important;
+  @media (max-width:700px){
+    width:90%;
+    margin:20px 0;
+    align-items:center;
+    height:unset;
+  }
+}
+div.vip:hover {
+  box-shadow: 0 5px 35px 0px pink;
+
+}
+.ticket:hover {
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.7);
+
+}

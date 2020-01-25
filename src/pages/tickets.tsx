@@ -1,9 +1,12 @@
 import React from "react"
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Layout from "../components/layout"
 import SEO from "../components/seo";
 import Countdown from 'react-countdown-now';
 import TandC from '../data/T&C_WCMB2020.pdf';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import CheckOutlinedIcon from '@material-ui/icons/CheckOutlined';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 const IFrame = styled.iframe`
   width:100% !important;
   height:500px !important;
@@ -90,6 +93,9 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
       </div>
   }
 };
+
+
+
 const IndexPage = (props) => {
   return(
     <Layout location={props.location}>
@@ -97,8 +103,49 @@ const IndexPage = (props) => {
         @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
       </style>
       <SEO title="Tickets" />
+      <div className={'ticket-container'}>
+        <div isVip={false} className={'ticket'}>
+        <h4>Standard</h4>
+
+          <ul>
+            <li>
+              <CheckOutlinedIcon/>
+              Unlimited food & drink</li>
+            <li><CheckOutlinedIcon/>Exceptional live music</li>
+            <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
+          </ul>
+      </div>
+        <div isVip={true} className={'ticket vip'}>
+          <h3>VIP</h3>
+
+          <ul>
+          <li><CheckOutlinedIcon/>Unlimited food & drink</li>
+          <li><CheckOutlinedIcon/>Exceptional live music</li>
+          <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
+          <li>
+            <FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>
+            Skip queue and early entry</li>
+          <li><FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>Champagne Reception with jazz and delicious food in the President’s garden</li>
+          </ul>
+        </div>
+        <div isVip={false} className={'ticket'}>
+          <h4>Group</h4>
+
+          <ul>
+          <li><CheckOutlinedIcon/>Unlimited food & drink</li>
+          <li><CheckOutlinedIcon/>Exceptional live music</li>
+          <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
+          <li><FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>For Wolfson socienties only</li>
+          </ul>
+        </div>
+      </div>
+      <div style={{display:'flex', width:'100%', justifyContent:'space-around',alignItems:'center', height:'200px'}}>
+        <ArrowDownwardIcon/>
+      <p>Scroll down to buy tickets </p>
+        <ArrowDownwardIcon/>
+      </div>
       <>
-        <IFrame className='ticketWidget'
+        <IFrame className='ticketWidget' id={'ticket-sales'}
                 src="https://fixr.co/event/813970428?compact=true&dark=false">
         </IFrame>
         <a href={TandC} target={'_blank'}>Terms and conditions</a>
