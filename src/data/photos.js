@@ -151,24 +151,6 @@ const photos = [
     width: 4,
     height: 3,
     id:26
-  },
-  {
-    src: require('../images/gallery/gallery27.jpg'),
-    width: 4,
-    height: 3,
-    id:27
-  },
-  {
-    src: require('../images/gallery/gallery28.jpg'),
-    width: 4,
-    height: 3,
-    id:28
-  },
-  {
-    src: require('../images/gallery/gallery29.jpg'),
-    width: 4,
-    height: 3,
-    id:29
-  },
+  }
 ];
 export default photos;

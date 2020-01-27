@@ -99,7 +99,7 @@ const Header = () => (
         className="mr-auto desktop-navbar">
         <NavCont>
         <li><Link href="/">Wolfson Mayball</Link></li>
-        <li><Link href="/committee">Committee</Link></li>
+        <li><Link href="/committee">Contact</Link></li>
         </NavCont>
 
         <Brand href="/">

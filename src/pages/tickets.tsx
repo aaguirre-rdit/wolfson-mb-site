@@ -103,11 +103,18 @@ const IndexPage = (props) => {
         @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
       </style>
       <SEO title="Tickets" />
+      <div style={{display:'flex', width:'100%', justifyContent:'space-around',alignItems:'center', height:'100px'}}>
+        <ArrowDownwardIcon/>
+        <p>Scroll down to buy tickets </p>
+        <ArrowDownwardIcon/>
+      </div>
       <div className={'ticket-container'}>
         <div isVip={false} className={'ticket'}>
         <h4>Standard</h4>
 
           <ul>
+            <li><CheckOutlinedIcon/>Entry at 9pm</li>
+
             <li>
               <CheckOutlinedIcon/>
               Unlimited food & drink</li>
@@ -119,12 +126,13 @@ const IndexPage = (props) => {
           <h3>VIP</h3>
 
           <ul>
+
           <li><CheckOutlinedIcon/>Unlimited food & drink</li>
           <li><CheckOutlinedIcon/>Exceptional live music</li>
           <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
           <li>
             <FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>
-            Skip queue and early entry</li>
+            Skip entrance queue and early entry</li>
           <li><FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>Champagne Reception with jazz and delicious food in the President’s garden</li>
           </ul>
         </div>
@@ -132,18 +140,15 @@ const IndexPage = (props) => {
           <h4>Group</h4>
 
           <ul>
-          <li><CheckOutlinedIcon/>Unlimited food & drink</li>
+            <li><CheckOutlinedIcon/>Entry at 9pm</li>
+            <li><CheckOutlinedIcon/>Unlimited food & drink</li>
           <li><CheckOutlinedIcon/>Exceptional live music</li>
           <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
           <li><FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>For Wolfson socienties only</li>
           </ul>
         </div>
       </div>
-      <div style={{display:'flex', width:'100%', justifyContent:'space-around',alignItems:'center', height:'200px'}}>
-        <ArrowDownwardIcon/>
-      <p>Scroll down to buy tickets </p>
-        <ArrowDownwardIcon/>
-      </div>
+
       <>
         <IFrame className='ticketWidget' id={'ticket-sales'}
                 src="https://fixr.co/event/813970428?compact=true&dark=false">
