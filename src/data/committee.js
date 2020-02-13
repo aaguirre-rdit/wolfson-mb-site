@@ -26,7 +26,7 @@ const commitee = [
   },
   {
     title:'Marketing & Development',
-    names:['An Tran', 'Rebeka Reti'],
+    names:['Bronwen Mehta', 'Ziming Zhu'],
     email:'development@wolfsonmayball.com'
   },
   {

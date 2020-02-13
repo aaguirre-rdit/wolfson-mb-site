@@ -120,6 +120,7 @@ const IndexPage = (props) => {
               Unlimited food & drink</li>
             <li><CheckOutlinedIcon/>Exceptional live music</li>
             <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
+
           </ul>
       </div>
         <div isVip={true} className={'ticket vip'}>
@@ -148,7 +149,11 @@ const IndexPage = (props) => {
           </ul>
         </div>
       </div>
-
+      <div className={'bursary-ticket'}>
+        Cambridge Bursary holders may purchase one Standard ticket at a
+        discounted price of £75; please contact the ticketing officer via
+        <a href={'mailto:ticket@wolfsonmayball.com'} style={{color:'white'}}> ticket@wolfsonmayball.com</a> with proof of your bursary status to obtain a promo code.
+      </div>
       <>
         <IFrame className='ticketWidget' id={'ticket-sales'}
                 src="https://fixr.co/event/813970428?compact=true&dark=false">
