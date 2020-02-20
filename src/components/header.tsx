@@ -108,7 +108,7 @@ const Header = () => (
         <li><Link href="/tickets">Tickets</Link></li>
         {/*<li><Link href="/apply">Apply to work</Link></li>*/}
 
-        <li><Link disabled={true} href="">Apply to work</Link></li>
+        <li><Link href="/apply">Apply to work</Link></li>
         <li><Link href="/gallery">Gallery</Link></li>
       </NavCont>
       </Nav>

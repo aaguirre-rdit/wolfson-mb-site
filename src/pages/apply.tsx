@@ -34,10 +34,21 @@ const Apply = (props) => {
   return(
     <Layout location={props.location}>
       <SEO title="Apply for work" />
-      <h3>
-        Application form here
-      </h3>
-      <FormContainer onSubmit={handleSubmit(onSubmit)}>
+      <p>
+        Wolfson College May Ball is currently looking for enthusiastic,
+        motivated and passionate workers to help make this year's Ball an incredible success.<br/>
+        Throughout the night you will/can be assigned a range of changing responsibilities to experience
+        different roles and avoid repetitive tasks.
+        For your work you will receive a competitive rate of at least £80 the night.<br/>
+        <strong>What are we looking for?</strong> Applications should be able to work as part of a team, contribute to its success and show friendliness, motivation, and charisma to all team members and guests. Although previous experience in May Balls or hospitality is beneficial, it is not essential. Convince us with your personality and drive!
+        Take this great opportunity, be part of a dynamic team, and make the Wolfson College May Ball one of
+        the most exciting nights of the year while earning some money.<br/>
+        Please apply <strong>until 7th March</strong> for first consideration. Interviews will be held on March 12th, 13th, and 14th.
+        <br/>
+        If you wish to apply, please complete our online application form below. <br/>
+        Send any queries to Nermin at <a href="mailto:logistics@wolfsonmayball.com">logistics@wolfsonmayball.com</a>.
+      </p>
+      <FormContainer onSubmit={handleSubmit(onSubmit)} id={'job-form'}>
         {/* register your input into the hook by invoking the "register" function */}
         <label>Full Name </label>
         <input
@@ -47,7 +58,14 @@ const Apply = (props) => {
           ref={register({
             required: true,
           })} />
-
+        <label>CRSID</label>
+        <input
+          name="CRSID"
+          type={'text'}
+          //defaultValue="name"
+          ref={register({
+            required: false,
+          })} />
         {/* include validation with required or other standard HTML validation rules */}
         <label>Email address</label>
         <input
@@ -63,11 +81,21 @@ const Apply = (props) => {
         {/* errors will return when field validation fails  */}
         <label>Position</label>
         <select name="Position" ref={register({ required: true })}>
-          <option value="Nima's Slave">Nima's Slave</option>
-          <option value="Silhouette Cropper">Silhouette Specialist</option>
-          <option value="Pixel Counter">Pixel Counter</option>
-          <option value="Donut Wall Assembler">Donut Wall Assembler</option>
+          <option value="Team Leader">Team leader</option>
+          <option value="Court Supervisor">Court supervisort</option>
+          <option value="Food and Drinks worker">Food and Drinks worker</option>
+          <option value="Security steward">Security steward</option>
+          <option value="On-call team">On-call team</option>
+          <option value="Litter collection worker">Litter collection worker</option>
+          <option value="Set-up worker">Set-up worker</option>
+          <option value="Clear-up worker">Clear-up worker</option>
         </select>
+        <label>Have you worked at a May Ball before or have any other experience in hospitality?
+        </label>
+        <textarea name="Experience" ref={register({required: true})} />
+        <label>Please indicate your availability for interviews
+        </label>
+        <textarea name="Availability" ref={register({required: true})} />
         {errors.exampleRequired && <span>This field is required</span>}
         <input type="submit" />
       </FormContainer>
