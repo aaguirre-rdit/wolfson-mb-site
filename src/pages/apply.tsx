@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useState } from "react"
 import useForm from 'react-hook-form';
 import styled from 'styled-components';
 import Layout from "../components/layout";
@@ -14,6 +14,7 @@ const FormContainer = styled.form`
   }
 `
 const Apply = (props) => {
+  let [submitted, changeSubmit] = useState(false)
   const { register, handleSubmit, watch, errors } = useForm({
     defaultValues: {
       fullName: "",
@@ -27,11 +28,19 @@ const Apply = (props) => {
     await axios.post(
       'https://r03zccug99.execute-api.eu-west-2.amazonaws.com/develop/work',
       JSON.stringify(data),
-    ).then(response => console.log({response}))
+    ).then(response => {
+      if (response.status == 200){
+        changeSubmit(true)
+      }
+    })
   };
   return(
     <Layout location={props.location}>
       <SEO title="Apply for work" />
+      {submitted ?
+        <h4>Thanks for applying. Our team will get in contact with you soon!</h4>
+      :
+      <div>
       <p>
         Wolfson College May Ball is currently looking for enthusiastic,
         motivated and passionate workers to help make this year's Ball an incredible success.<br/>
@@ -97,6 +106,7 @@ const Apply = (props) => {
         {errors.exampleRequired && <span>This field is required</span>}
         <input type="submit" />
       </FormContainer>
+        </div>}
     </Layout>
   )
 }
