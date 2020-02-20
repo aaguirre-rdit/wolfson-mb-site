@@ -16,16 +16,14 @@ const FormContainer = styled.form`
 const Apply = (props) => {
   const { register, handleSubmit, watch, errors } = useForm({
     defaultValues: {
-      fullName: "John Doe",
-      email: "bluebill1049@cam.ac.uk",
-      position:  "Nima's Slave",
-      phone: '01223 1234'
+      fullName: "",
+      email: "",
+      position:  "Team Leader",
+      phone: ''
     }
   });
 
   const onSubmit = async data => {
-    alert(JSON.stringify(data));
-    console.log({errors});
     await axios.post(
       'https://r03zccug99.execute-api.eu-west-2.amazonaws.com/develop/work',
       JSON.stringify(data),
