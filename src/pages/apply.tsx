@@ -41,7 +41,7 @@ const Apply = (props) => {
         <h4>Thanks for applying. Our team will get in contact with you soon!</h4>
       :
       <div>
-      <p>
+      <div className={'apply-text'}>
         Wolfson College May Ball is currently looking for enthusiastic,
         motivated and passionate workers to help make this year's Ball an incredible success.<br/>
         Throughout the night you will/can be assigned a range of changing responsibilities to experience
@@ -53,8 +53,8 @@ const Apply = (props) => {
         Please apply <strong>until 7th March</strong> for first consideration. Interviews will be held on March 12th, 13th, and 14th.
         <br/>
         If you wish to apply, please complete our online application form below. <br/>
-        Send any queries to Nermin at <a href="mailto:logistics@wolfsonmayball.com">logistics@wolfsonmayball.com</a>.
-      </p>
+        <span id={'bur-quer'}>Send any queries to Nermin at <a href="mailto:logistics@wolfsonmayball.com">logistics@wolfsonmayball.com</a>.</span>
+      </div>
       <FormContainer onSubmit={handleSubmit(onSubmit)} id={'job-form'}>
         {/* register your input into the hook by invoking the "register" function */}
         <label>Full Name </label>
