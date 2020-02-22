@@ -50,6 +50,21 @@ const Apply = (props) => {
         <strong>What are we looking for?</strong> Applications should be able to work as part of a team, contribute to its success and show friendliness, motivation, and charisma to all team members and guests. Although previous experience in May Balls or hospitality is beneficial, it is not essential. Convince us with your personality and drive!
         Take this great opportunity, be part of a dynamic team, and make the Wolfson College May Ball one of
         the most exciting nights of the year while earning some money.<br/>
+        We are seeking candidates for the following roles:
+        <ul style={{padding:'0 25px'}}>
+          <li><strong>Team leader</strong>: Supervises a specific team of the May Ball, such as, Food and Drinks, and ensures standards are met.</li>
+          <li><strong>Court supervisor</strong>: Responsible for a specific court, for example, West Court, to ensure smooth operation.</li>
+          <li><strong>Food and Drinks Worker</strong>: Serve food and drink and keep stalls stocked.
+          </li>
+          <li><strong>Security steward</strong>: Report any illegal attempts to enter May Ball and ensure health and safety</li>
+          <li><strong>Ents runner</strong>: Escort acts to stage at the right time and ensure acts stay on schedule.</li>
+          <li><strong>On-Call team</strong>: Staff vacant positions in different teams when required.
+          </li>
+          <li><strong>Litter collection worker</strong>: Collect litter and ensure appropriate disposal.</li>
+
+          <li><strong>Set-up worker</strong>: Help setting-up Ball on day before (Thursday) and day itself (Friday).</li>
+          <li><strong>Clear-up worker</strong>: Assist in clearing-up decorations and removing litter on day after May Ball.</li>
+        </ul>
         Please apply <strong>until 7th March</strong> for first consideration. Interviews will be held on March 12th, 13th, and 14th.
         <br/>
         If you wish to apply, please complete our online application form below. <br/>
@@ -97,7 +112,7 @@ const Apply = (props) => {
           <option value="Set-up worker">Set-up worker</option>
           <option value="Clear-up worker">Clear-up worker</option>
         </select>
-        <label>Have you worked at a May Ball before or have any other experience in hospitality?
+        <label>Have you worked at a May Ball before or have any other experience in hospitality? Please share any specific information and, if applicable, indicate why you would like to occupy a specific role
         </label>
         <textarea name="Experience" ref={register({required: true})} />
         <label>Please indicate your availability for interviews
