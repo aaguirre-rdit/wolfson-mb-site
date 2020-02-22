@@ -108,9 +108,11 @@ const Apply = (props) => {
           <option value="Food and Drinks worker">Food and Drinks worker</option>
           <option value="Security steward">Security steward</option>
           <option value="On-call team">On-call team</option>
+          <option value={'Ents runner'}>Ents runner</option>
           <option value="Litter collection worker">Litter collection worker</option>
           <option value="Set-up worker">Set-up worker</option>
           <option value="Clear-up worker">Clear-up worker</option>
+
         </select>
         <label>Have you worked at a May Ball before or have any other experience in hospitality? Please share any specific information and, if applicable, indicate why you would like to occupy a specific role
         </label>
