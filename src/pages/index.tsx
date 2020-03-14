@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import * as mainlogo from '../images/handdrawn-03-transparent.png';
 import styled from 'styled-components';
 import {Container} from "react-bootstrap";
+import Statement from '../components/statement.jsx';
 
 const Title = styled.h1`
  font-family: UnifrakturMaguntia, cursive;
@@ -45,6 +46,7 @@ const IndexPage = (props) => {
   return(
     <Layout location={props.location} showStars={true}>
       <SEO title="Home" />
+      <Statement/>
       <MainLogo>
       <img
         src={mainlogo}

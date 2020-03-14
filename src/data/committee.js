@@ -41,12 +41,12 @@ const commitee = [
   },
   {
     title:'Decoration',
-    names:['Jasmine Jennings'],
+    names:['Jasmine Jennings','An Tran'],
     email:'decoration@wolfsonmayball.com'
   },
   {
     title:'Musical Entertainment',
-    names:['Stefan Nielsen'],
+    names:['Scott Dunleavy'],
     email:'music@wolfsonmayball.com'
   },{
     title:'Non-Musical Entertainment',

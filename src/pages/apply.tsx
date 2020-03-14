@@ -104,7 +104,7 @@ const Apply = (props) => {
         <label>Position</label>
         <select name="Position" ref={register({ required: true })}>
           <option value="Team Leader">Team leader</option>
-          <option value="Court Supervisor">Court supervisort</option>
+          <option value="Court Supervisor">Court supervisor</option>
           <option value="Food and Drinks worker">Food and Drinks worker</option>
           <option value="Security steward">Security steward</option>
           <option value="On-call team">On-call team</option>

@@ -145,7 +145,7 @@ const IndexPage = (props) => {
             <li><CheckOutlinedIcon/>Unlimited food & drink</li>
           <li><CheckOutlinedIcon/>Exceptional live music</li>
           <li><CheckOutlinedIcon/>Wide variety of entertainments</li>
-          <li><FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>For Wolfson socienties only</li>
+          <li><FavoriteBorderOutlinedIcon fontSize={'small'} className={'ticket-adv'}/>For Wolfson societies only</li>
           </ul>
         </div>
       </div>
