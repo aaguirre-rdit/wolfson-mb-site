@@ -53,7 +53,7 @@ const IndexPage = (props) => {
       />
       </MainLogo>
       <Subtitle>
-        19 June 2020
+        Cancelled
       </Subtitle>
     </Layout>
   )
