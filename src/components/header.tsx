@@ -105,10 +105,10 @@ const Header = () => (
         <Brand href="/">
         </Brand>
       <NavCont>
-        <li><Link href="/tickets">Tickets</Link></li>
+        <li><Link href="/tickets" disabled={true}>Tickets</Link></li>
         {/*<li><Link href="/apply">Apply to work</Link></li>*/}
 
-        <li><Link href="/apply">Apply to work</Link></li>
+        <li><Link href="/apply" disabled={true}>Apply to work</Link></li>
         <li><Link href="/gallery">Gallery</Link></li>
       </NavCont>
       </Nav>
